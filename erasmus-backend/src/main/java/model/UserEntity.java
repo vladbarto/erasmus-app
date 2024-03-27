@@ -18,7 +18,7 @@ import java.util.UUID;
 public class UserEntity {
     @Id
     @Column(name = "USERNAME")
-    private UUID username;
+    private String username;
 
     @Column(name = "PASSWORD")
     private String password;

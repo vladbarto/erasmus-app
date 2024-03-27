@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.UUID;
 
 public class UserResponseDTO {
-    private UUID username;
+    private String username;
     private String password;
     private String name;
     private String email;
