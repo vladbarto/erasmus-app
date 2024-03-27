@@ -1,11 +1,12 @@
 package model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.UUID;
 
 @Entity
 @Table(name="USER")
@@ -14,9 +15,19 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AnnouncementEntity {
-    private int announcementId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID announcementId;
+
+    @Column(name = "TITLE")
     private String title;
+
+    @Column(name = "DESCRIPTION")
     private String description;
+
+    @Column(name = "REPRESENTATIVEID")
     private int representativeId;
+
+    @Column(name = "UNIVERSITYCODE")
     private String universityCode;
 }
