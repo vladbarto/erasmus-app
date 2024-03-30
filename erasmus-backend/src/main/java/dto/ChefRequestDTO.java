@@ -1,4 +1,4 @@
-package dto.bareSubject;
+package dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,8 +9,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class BareSubjectRequestDTO {
-    private Integer CAENSubject;
-    private String compositeKey;
-    private String description;
+public class ChefRequestDTO {
+
+    private String name;
+    private double rating;
 }

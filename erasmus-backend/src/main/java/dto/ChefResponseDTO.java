@@ -1,16 +1,19 @@
-package dto.bareSubject;
+package dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class BareSubjectRequestDTO {
-    private Integer CAENSubject;
-    private String compositeKey;
-    private String description;
+public class ChefResponseDTO {
+
+    private UUID id;
+    private String name;
+    private double numberOfStars;
 }

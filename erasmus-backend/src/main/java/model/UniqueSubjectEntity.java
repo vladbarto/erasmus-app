@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="USER")
+@Table(name="UNIQUESUBJECT")
 @Getter
 @Setter
 @NoArgsConstructor

@@ -10,15 +10,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="USER")
+@Table(name = "BARESUBJECT")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class BareSubjectEntity {
     @Id
-    @Column(name = "CAENSUBJECT")
-    private int CAENSubject;
+//    @Column(name = "CAENSUBJECT")
+    private Integer CAENSubject;
 
     @Column(name = "COMPOSITEKEY")
     private String compositeKey;

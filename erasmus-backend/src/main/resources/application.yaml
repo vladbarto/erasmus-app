@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: erasmus-backend
+  datasource:
+    url: jdbc:postgresql://localhost:5432/erasmus_db
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+server:
+  port: 8778
+  servlet:
+    context-path: '/api'
+  error:
+    whitelabel:
+      enabled: false

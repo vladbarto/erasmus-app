@@ -1,4 +1,7 @@
-package dto.bareSubject;
+
+package dto;
+
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,8 +12,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class BareSubjectRequestDTO {
-    private Integer CAENSubject;
-    private String compositeKey;
-    private String description;
+public class CollectionResponseDTO<T> {
+
+    private List<T> items;
+    private long total;
 }

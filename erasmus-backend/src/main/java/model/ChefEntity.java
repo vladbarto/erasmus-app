@@ -7,17 +7,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.UUID;
+
 @Entity
-@Table(name="REPRESENTATIVE")
+@Table(name = "CHEF")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class RepresentativeEntity extends UserEntity {
+public class ChefEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID representativeId;
+    private UUID id;
 
-    @Column(name = "TITLES")
-    private String titles;
+    @Column(name = "NAME")
+    private String name;
+
+    @Column(name = "RATING")
+    private double rating;
 }
