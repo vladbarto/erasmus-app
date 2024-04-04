@@ -6,9 +6,11 @@ import org.springframework.context.annotation.Configuration;
 import ro.tucn.erasmusbackend.mapper.AnnouncementMapper;
 import ro.tucn.erasmusbackend.mapper.BareSubjectMapper;
 import ro.tucn.erasmusbackend.mapper.ChefMapper;
+import ro.tucn.erasmusbackend.mapper.FacultyMapper;
 import ro.tucn.erasmusbackend.repository.AnnouncementRepository;
 import ro.tucn.erasmusbackend.repository.BareSubjectRepository;
 import ro.tucn.erasmusbackend.repository.ChefRepository;
+import ro.tucn.erasmusbackend.repository.FacultyRepository;
 import ro.tucn.erasmusbackend.service.*;
 
 @Configuration
@@ -39,5 +41,14 @@ public class Config {
             @Value("${spring.application.name:BACKEND}") String applicationName
     ) {
         return new AnnouncementServiceBean(announcementRepository, announcementMapper, applicationName);
+    }
+
+    @Bean
+    public FacultyService facultyServiceBean(
+            FacultyRepository facultyRepository,
+            FacultyMapper facultyMapper,
+            @Value("${spring.application.name:BACKEND}") String applicationName
+    ) {
+        return new FacultyServiceBean(facultyRepository, facultyMapper, applicationName);
     }
 }

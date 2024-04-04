@@ -18,7 +18,7 @@ import lombok.Setter;
 public class FacultyEntity {
     @Id
     @Column(name = "FACULTYCODE")
-    private int facultyCode;
+    private Integer facultyCode;
 
     @Column(name = "NAME")
     private String name;
