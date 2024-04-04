@@ -1,8 +1,19 @@
 package ro.tucn.erasmusbackend.dto.announcement;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.UUID;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class AnnouncementRequestDTO {
     private String title;
     private String description;
-    private int representativeId;
+    private UUID representativeId;
     private String universityCode;
 }
