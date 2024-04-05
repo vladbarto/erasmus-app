@@ -54,4 +54,13 @@ public class Config {
     ) {
         return new UniversityServiceBean(universityRepository, universityMapper, applicationName);
     }
+
+    @Bean
+    public UniqueSubjectService uniqueubjectService(
+            UniqueSubjectRepository uniqueSubjectRepository,
+            UniqueSubjectMapper uniqueSubjectMapper,
+            @Value("${spring.application.name:BACKEND}") String applicationName
+    ) {
+        return new UniqueSubjectServiceBean(uniqueSubjectRepository, uniqueSubjectMapper, applicationName);
+    }
 }
