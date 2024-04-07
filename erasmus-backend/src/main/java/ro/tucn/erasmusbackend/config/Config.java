@@ -56,11 +56,38 @@ public class Config {
     }
 
     @Bean
-    public UniqueSubjectService uniqueubjectService(
+    public UniqueSubjectService uniqueSubjectService(
             UniqueSubjectRepository uniqueSubjectRepository,
             UniqueSubjectMapper uniqueSubjectMapper,
             @Value("${spring.application.name:BACKEND}") String applicationName
     ) {
         return new UniqueSubjectServiceBean(uniqueSubjectRepository, uniqueSubjectMapper, applicationName);
+    }
+
+    @Bean
+    public PersonService personService(
+            PersonRepository personRepository,
+            PersonMapper personMapper,
+            @Value("${spring.application.name:BACKEND}") String applicationName
+    ) {
+        return new PersonServiceBean(personRepository, personMapper, applicationName);
+    }
+
+    @Bean
+    public StudentService studentService(
+            StudentRepository studentRepository,
+            StudentMapper studentMapper,
+            @Value("${spring.application.name:BACKEND}") String applicationName
+    ) {
+        return new StudentServiceBean(studentRepository, studentMapper, applicationName);
+    }
+
+    @Bean
+    public RepresentativeService representativeService(
+            RepresentativeRepository representativeRepository,
+            RepresentativeMapper representativeMapper,
+            @Value("${spring.application.name:BACKEND}") String applicationName
+    ) {
+        return new RepresentativeServiceBean(representativeRepository, representativeMapper, applicationName);
     }
 }
