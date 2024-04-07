@@ -5,12 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class FacultyResponseDTO {
-    private Integer facultyCode;
+    private UUID facultyCode;
     private String name;
     private String universityCode;
     private String description;
