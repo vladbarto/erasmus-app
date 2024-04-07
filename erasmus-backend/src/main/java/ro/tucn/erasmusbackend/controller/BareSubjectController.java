@@ -50,7 +50,7 @@ public class BareSubjectController {
         );
     }
 
-    @GetMapping("/post")
+    @PostMapping("/save-one")
     public ResponseEntity<BareSubjectResponseDTO> saveBareSubject(
             @RequestBody BareSubjectRequestDTO bareSubjectRequestDTO
     ) {
