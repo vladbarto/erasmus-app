@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.UUID;
 
 @Getter
@@ -16,7 +16,7 @@ public class PersonResponseDTO {
     private String CNP;
     private String name;
     private String phoneNumber;
-    private LocalDate dateOfBirth;
+    private Date dateOfBirth;
     private String universityCode;
     private UUID facultyCode;
     private String country;

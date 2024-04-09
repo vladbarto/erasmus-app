@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ro.tucn.erasmusbackend.dto.person.PersonResponseDTO;
 
 import java.util.UUID;
 
@@ -16,7 +17,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @PrimaryKeyJoinColumn(name = "CNP")
-public class RepresentativeEntity {
+public class RepresentativeEntity extends PersonEntity {
 
     @Column(name = "REPRESENTATIVEID")
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -25,4 +26,7 @@ public class RepresentativeEntity {
     @Column(name = "TITLES")
     private String titles; // conf. univ. prof. dr. ...
 
+    @Column(name = "TYPE") // Secretary, Teacher
+    @Enumerated(EnumType.STRING)
+    private Type type;
 }

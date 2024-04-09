@@ -8,8 +8,8 @@ import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
-import java.time.LocalDate;
 import java.util.UUID;
+import java.util.Date;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -18,6 +18,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class PersonEntity {
 
     private UserEntity user;
@@ -34,7 +35,7 @@ public class PersonEntity {
 
     @Column(name = "DATEOFBIRTH")
 //    @JdbcTypeCode(SqlTypes.DATE)
-    private LocalDate dateOfBirth;
+    private Date dateOfBirth;
 
     @Column(name = "UNIVERSITYCODE")
     private String universityCode;
