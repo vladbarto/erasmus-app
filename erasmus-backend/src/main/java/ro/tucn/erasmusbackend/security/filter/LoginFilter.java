@@ -47,6 +47,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
             return super.getAuthenticationManager().authenticate(authentication);
         } catch (Exception e) {
             log.error(e.getMessage());
+            log.error("Date gresite de autentificare");
 
             throw new BadCredentialsException(e.getMessage());
         }

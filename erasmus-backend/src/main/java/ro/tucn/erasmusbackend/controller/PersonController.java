@@ -3,6 +3,7 @@ package ro.tucn.erasmusbackend.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import ro.tucn.erasmusbackend.dto.person.PersonRequestDTO;
 import ro.tucn.erasmusbackend.dto.person.PersonResponseDTO;
@@ -17,6 +18,7 @@ public class PersonController {
     private final PersonService personService;
 
     @GetMapping("/all")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<PersonResponseDTO>> findAll() {
         return new ResponseEntity<>(
                 personService.findAll(),
@@ -25,6 +27,7 @@ public class PersonController {
     }
 
     @PostMapping("/save-one")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<PersonResponseDTO> savePerson(
             @RequestBody PersonRequestDTO personRequestDTO
     ) {

@@ -11,15 +11,6 @@ import ro.tucn.erasmusbackend.service.*;
 public class Config {
 
     @Bean
-    public ChefService chefServiceBean(
-            ChefRepository chefRepository,
-            ChefMapper chefMapper,
-            @Value("${spring.application.name:BACKEND}") String applicationName
-    ) {
-        return new ChefServiceBean(chefRepository, chefMapper, applicationName);
-    }
-
-    @Bean
     public BareSubjectService bareSubjectService(
             BareSubjectRepository bareSubjectRepository,
             BareSubjectMapper bareSubjectMapper,
