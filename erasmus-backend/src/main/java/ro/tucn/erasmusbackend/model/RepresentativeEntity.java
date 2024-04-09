@@ -19,10 +19,6 @@ import java.util.UUID;
 @PrimaryKeyJoinColumn(name = "CNP")
 public class RepresentativeEntity extends PersonEntity {
 
-    @Column(name = "REPRESENTATIVEID")
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID representativeId;
-
     @Column(name = "TITLES")
     private String titles; // conf. univ. prof. dr. ...
 

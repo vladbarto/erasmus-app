@@ -5,5 +5,5 @@ import ro.tucn.erasmusbackend.model.RepresentativeEntity;
 
 import java.util.UUID;
 
-public interface RepresentativeRepository extends JpaRepository<RepresentativeEntity, UUID> {
+public interface RepresentativeRepository extends JpaRepository<RepresentativeEntity, String> {
 }

@@ -21,6 +21,7 @@ import java.util.Date;
 
 public class PersonEntity {
 
+    @OneToOne
     private UserEntity user;
 
     @Id
@@ -34,7 +35,6 @@ public class PersonEntity {
     private String phoneNumber;
 
     @Column(name = "DATEOFBIRTH")
-//    @JdbcTypeCode(SqlTypes.DATE)
     private Date dateOfBirth;
 
     @Column(name = "UNIVERSITYCODE")
