@@ -1,5 +1,10 @@
 package ro.tucn.erasmusbackend.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ro.tucn.erasmusbackend.dto.announcement.AnnouncementRequestDTO;
 import ro.tucn.erasmusbackend.dto.announcement.AnnouncementResponseDTO;
+import ro.tucn.erasmusbackend.exception.ExceptionBody;
 import ro.tucn.erasmusbackend.service.AnnouncementService;
 
 import java.util.List;
@@ -30,6 +36,15 @@ public class AnnouncementController {
      * @return list of all announcements and an http status
      */
     @GetMapping("/all")
+    @Operation(summary = "Gets all announcements", description = "at least an announcement must exist")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Announcement found",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = AnnouncementResponseDTO.class))}),
+            @ApiResponse(responseCode = "404", description = "Announcement not found",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))}),
+            @ApiResponse(responseCode = "500", description = "Internal server error",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))})
+    })
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<AnnouncementResponseDTO>> findAll() {
         return new ResponseEntity<>(
@@ -44,6 +59,9 @@ public class AnnouncementController {
      * @return the data to be saved and an http status
      */
     @PostMapping("/save-one")
+    @Operation(summary = "Save one announcements")
+    @ApiResponse(responseCode = "201", description = "Announcement successfully created",
+            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = AnnouncementResponseDTO.class))})
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<AnnouncementResponseDTO> saveAnnouncement(
             @RequestBody AnnouncementRequestDTO announcementRequestDTO

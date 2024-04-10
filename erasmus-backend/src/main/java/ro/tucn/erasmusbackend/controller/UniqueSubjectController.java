@@ -48,6 +48,15 @@ public class UniqueSubjectController {
      * @return list of all unique subjects and an http status
      */
     @GetMapping("/all")
+    @Operation(summary = "Gets all unique subjects", description = "at least one unique subject must exist")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Unique Subject found",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = UniqueSubjectResponseDTO.class))}),
+            @ApiResponse(responseCode = "404", description = "Unique Subject not found",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))}),
+            @ApiResponse(responseCode = "500", description = "Internal server error",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))})
+    })
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<UniqueSubjectResponseDTO>> findAll() {
         return new ResponseEntity<>(
@@ -62,6 +71,10 @@ public class UniqueSubjectController {
      * @return the data to be saved and an http status
      */
     @PostMapping("/save-one")
+    @Operation(summary = "Save one unique subject")
+    @ApiResponse(responseCode = "201", description = "Unique subject successfully created",
+            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = UniqueSubjectResponseDTO.class))})
+
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<UniqueSubjectResponseDTO> saveUniqueSubject(
             @RequestBody UniqueSubjectRequestDTO uniqueSubjectRequestDTO

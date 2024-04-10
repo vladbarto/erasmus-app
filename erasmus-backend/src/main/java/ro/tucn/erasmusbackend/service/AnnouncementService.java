@@ -16,6 +16,7 @@ public interface AnnouncementService {
      * Method that returns all announcements
      * @return list of all announcements
      */
+
     List<AnnouncementResponseDTO> findAll();
 
     /**

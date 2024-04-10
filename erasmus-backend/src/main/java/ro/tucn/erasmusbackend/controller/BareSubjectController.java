@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ro.tucn.erasmusbackend.dto.announcement.AnnouncementResponseDTO;
 import ro.tucn.erasmusbackend.dto.bareSubject.BareSubjectRequestDTO;
 import ro.tucn.erasmusbackend.dto.bareSubject.BareSubjectResponseDTO;
 import ro.tucn.erasmusbackend.exception.ExceptionBody;
@@ -52,6 +53,15 @@ public class BareSubjectController {
      * @return list of all bare subjects and an http status
      */
     @GetMapping("/all")
+    @Operation(summary = "Gets all bare subjects", description = "at least one bare subject must exist")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Bare subject found",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = BareSubjectResponseDTO.class))}),
+            @ApiResponse(responseCode = "404", description = "Bare subject not found",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))}),
+            @ApiResponse(responseCode = "500", description = "Internal server error",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))})
+    })
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<BareSubjectResponseDTO>> findAll() {
         return new ResponseEntity<>(
@@ -66,6 +76,9 @@ public class BareSubjectController {
      * @return the data to be saved and an http status
      */
     @PostMapping("/save-one")
+    @Operation(summary = "Save one bare subject")
+    @ApiResponse(responseCode = "201", description = "Bare subject successfully created",
+            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = BareSubjectResponseDTO.class))})
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<BareSubjectResponseDTO> saveBareSubject(
             @RequestBody BareSubjectRequestDTO bareSubjectRequestDTO
