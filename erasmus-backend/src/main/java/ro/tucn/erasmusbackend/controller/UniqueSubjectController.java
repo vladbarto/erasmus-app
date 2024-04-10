@@ -20,7 +20,9 @@ import ro.tucn.erasmusbackend.exception.ExceptionBody;
 import ro.tucn.erasmusbackend.service.UniqueSubjectService;
 
 import java.util.List;
-
+/**
+ * Manages interaction between client and server
+ */
 @RestController
 @RequestMapping("/unique-subject/v1")
 @RequiredArgsConstructor
@@ -41,6 +43,10 @@ public class UniqueSubjectController {
         ;
     }
 
+    /**
+     * Method that returns to client all found unique subjects
+     * @return list of all unique subjects and an http status
+     */
     @GetMapping("/all")
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<UniqueSubjectResponseDTO>> findAll() {
@@ -50,7 +56,11 @@ public class UniqueSubjectController {
         );
     }
 
-
+    /**
+     * Method that sends to the server a save request
+     * @param uniqueSubjectRequestDTO - data of unique subject to be saved
+     * @return the data to be saved and an http status
+     */
     @PostMapping("/save-one")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<UniqueSubjectResponseDTO> saveUniqueSubject(

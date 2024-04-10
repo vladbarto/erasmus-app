@@ -3,6 +3,9 @@ package ro.tucn.erasmusbackend.exception;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * Possible exceptions
+ */
 @Getter
 @RequiredArgsConstructor
 public enum ExceptionCode {

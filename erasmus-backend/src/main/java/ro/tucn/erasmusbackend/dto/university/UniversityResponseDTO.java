@@ -7,11 +7,15 @@ import lombok.Setter;
 
 import java.util.List;
 
+/**
+ * Server's response to the client
+ */
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class UniversityResponseDTO {
+
     private String universityCode;
     private String name; // TODO: add this to documentation
     private String city;

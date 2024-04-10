@@ -7,11 +7,15 @@ import lombok.Setter;
 
 import java.util.List;
 
+/**
+ * Client's request to the server
+ */
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class UniversityRequestDTO {
+
     private String universityCode;
     private String name;
     private String city;

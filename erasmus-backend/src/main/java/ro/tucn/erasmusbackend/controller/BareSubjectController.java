@@ -20,7 +20,9 @@ import ro.tucn.erasmusbackend.exception.ExceptionBody;
 import ro.tucn.erasmusbackend.service.BareSubjectService;
 
 import java.util.List;
-
+/**
+ * Manages interaction between client and server
+ */
 @RestController
 @RequestMapping("/bare-subject/v1")
 @RequiredArgsConstructor
@@ -28,6 +30,9 @@ public class BareSubjectController {
 
     private final BareSubjectService bareSubjectService;
 
+    /**
+     * TO BE IMPLEMENTED: method that gets Bare Subjects by CAEN Code (its ID)
+     */
     @GetMapping("/{id}")
     @Operation(summary = "Gets Bare Subjects by CAEN Code", description = "Subject must exist")
     @ApiResponses(value = {
@@ -42,6 +47,10 @@ public class BareSubjectController {
         ;
     }
 
+    /**
+     * Method that returns to client all found bare subjects
+     * @return list of all bare subjects and an http status
+     */
     @GetMapping("/all")
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<BareSubjectResponseDTO>> findAll() {
@@ -51,6 +60,11 @@ public class BareSubjectController {
         );
     }
 
+    /**
+     * Method that sends to the server a save request
+     * @param bareSubjectRequestDTO - data of bare subject to be saved
+     * @return the data to be saved and an http status
+     */
     @PostMapping("/save-one")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<BareSubjectResponseDTO> saveBareSubject(

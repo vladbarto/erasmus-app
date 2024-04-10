@@ -5,6 +5,9 @@ import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * Exception returned for a request: type of exception and timestamp
+ */
 @Getter
 @RequiredArgsConstructor
 public class ExceptionBody {

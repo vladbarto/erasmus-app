@@ -13,6 +13,9 @@ import jakarta.validation.Payload;
 @Constraint(validatedBy = OddPageSizeValidator.class)
 @Target({ElementType.METHOD, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
+/**
+ * Interface that promises that page size will be odd.
+ */
 public @interface OddPageSize {
 
     String message() default "Page size must be an odd number";

@@ -18,10 +18,17 @@ import java.util.List;
 @RestController
 @RequestMapping("/announcement/v1")
 @RequiredArgsConstructor
+/**
+ * Manages interaction between client and server
+ */
 public class AnnouncementController {
 
     private final AnnouncementService announcementService;
 
+    /**
+     * Method that returns to client all found announcements
+     * @return list of all announcements and an http status
+     */
     @GetMapping("/all")
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<AnnouncementResponseDTO>> findAll() {
@@ -31,6 +38,11 @@ public class AnnouncementController {
         );
     }
 
+    /**
+     * Method that sends to the server a save request
+     * @param announcementRequestDTO - data of announcement to be saved
+     * @return the data to be saved and an http status
+     */
     @PostMapping("/save-one")
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<AnnouncementResponseDTO> saveAnnouncement(

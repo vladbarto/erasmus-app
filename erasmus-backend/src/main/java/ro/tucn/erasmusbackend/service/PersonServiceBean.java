@@ -30,6 +30,7 @@ public class PersonServiceBean implements PersonService{
     @Override
     @Transactional
     public PersonResponseDTO save(PersonRequestDTO personRequestDTO) {
+        log.info("Posting a new person for application {}", applicationName);
         PersonEntity personToBeAdded = personMapper.personRequestDTOToPersonEntity(personRequestDTO);
         PersonEntity personAdded = personRepository.save(personToBeAdded);
 

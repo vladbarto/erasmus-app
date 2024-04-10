@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 
+/**
+ * Controls the login of a user
+ */
 @Slf4j
 @RestController
 @RequestMapping("/auth/v1")

@@ -30,6 +30,7 @@ public class FacultyServiceBean implements FacultyService {
     @Override
     @Transactional
     public FacultyResponseDTO save(FacultyRequestDTO facultyRequestDTO) {
+        log.info("Saving (Posting) a faculty for application {}", applicationName);
         FacultyEntity facultyToBeAdded = facultyMapper.facultyRequestDTOToFacultyEntity(facultyRequestDTO);
         FacultyEntity facultyAdded = facultyRepository.save(facultyToBeAdded);
 

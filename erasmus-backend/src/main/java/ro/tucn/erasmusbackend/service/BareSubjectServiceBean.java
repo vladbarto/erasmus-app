@@ -30,6 +30,7 @@ public class BareSubjectServiceBean implements BareSubjectService {
     @Override
     @Transactional
     public BareSubjectResponseDTO save(BareSubjectRequestDTO bareSubjectRequestDTO) {
+        log.info("Posting a bare subject for application {}", applicationName);
         BareSubjectEntity bareSubjectToBeAdded = bareSubjectMapper.bareSubjectRequestDTOToBareSubjectEntity (bareSubjectRequestDTO);
         BareSubjectEntity bareSubjectAdded = bareSubjectRepository.save(bareSubjectToBeAdded);
 

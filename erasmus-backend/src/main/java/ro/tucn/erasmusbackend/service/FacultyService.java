@@ -5,8 +5,24 @@ import ro.tucn.erasmusbackend.dto.faculty.FacultyResponseDTO;
 
 import java.util.List;
 
+/**
+ * Service class that defines Faculty CRUD operations
+ * This includes:
+ * - Finding all faculties
+ * - Saving a faculty
+ */
 public interface FacultyService {
+
+    /**
+     * Method that returns all faculties
+     * @return list of all faculties
+     */
     List<FacultyResponseDTO> findAll();
 
+    /**
+     * Method that saves a faculty
+     * @param facultyRequestDTO - object that stores the attributes by which a faculty should be saved
+     * @return object of type ResponseDTO containing all attributes of a Faculty saved in DB
+     */
     FacultyResponseDTO save(FacultyRequestDTO facultyRequestDTO);
 }

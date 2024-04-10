@@ -29,6 +29,7 @@ public class AnnouncementServiceBean implements AnnouncementService {
     @Override
     @Transactional
     public AnnouncementResponseDTO save(AnnouncementRequestDTO announcementRequestDTO) {
+        log.info("Posting an announcement for application {}", applicationName);
         AnnouncementEntity announcementToBeAdded = announcementMapper.announcementRequestDTOToAnnouncementEntity(announcementRequestDTO);
         AnnouncementEntity announcementAdded = announcementRepository.save(announcementToBeAdded);
 

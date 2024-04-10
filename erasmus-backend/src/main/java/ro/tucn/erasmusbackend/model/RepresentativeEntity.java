@@ -17,8 +17,15 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @PrimaryKeyJoinColumn(name = "CNP")
+/**
+ * Current class defines how a representative should look like.
+ * Representative = Representing (aka Responsible) Teacher; or a Secretary
+ */
 public class RepresentativeEntity extends PersonEntity {
 
+    /**
+     * titles for a such a person could be "conf. univ. prof. dr. sL. (sef lucrari)"
+     */
     @Column(name = "TITLES")
     private String titles; // conf. univ. prof. dr. ...
 

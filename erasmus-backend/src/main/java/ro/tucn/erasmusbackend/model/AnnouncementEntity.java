@@ -14,6 +14,9 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * Current class defines how an announcement should look like
+ */
 public class AnnouncementEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

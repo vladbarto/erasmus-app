@@ -5,5 +5,8 @@ import ro.tucn.erasmusbackend.model.FacultyEntity;
 
 import java.util.UUID;
 
+/**
+ * Repository that supports pre-implemented CRUD operations; adapted for faculty
+ */
 public interface FacultyRepository extends JpaRepository<FacultyEntity, UUID> {
 }

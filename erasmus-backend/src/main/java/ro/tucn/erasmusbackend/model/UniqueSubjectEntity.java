@@ -15,6 +15,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * Current class defines how a Unique subject should look like.
+ * A unique subject is one bare subject, but particularised for a specific faculty
+ */
 public class UniqueSubjectEntity {
     @Id
     @Column(name = "UNIVERSITYCODE")

@@ -8,11 +8,15 @@ import lombok.Setter;
 import java.util.Date;
 import java.util.UUID;
 
+/**
+ * Server's response to the client
+ */
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class PersonResponseDTO {
+
     private String CNP;
     private String name;
     private String phoneNumber;

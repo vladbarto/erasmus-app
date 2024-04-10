@@ -18,7 +18,10 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
+/**
+ * Current class defines how a person should look like.
+ * Here things brecome interesting, because person is to be inherited by Student and Representative.
+ */
 public class PersonEntity {
 
     @OneToOne
@@ -26,6 +29,10 @@ public class PersonEntity {
 
     @Id
     @Column(name = "CNP")
+    /**
+     * This attribute (equivalent of Social Security Number - for US developers) uniquely identifies a person.
+     * Hence, it can uniquely identify a Student or a Representative
+     */
     private String CNP;
 
     @Column(name = "NAME")

@@ -14,6 +14,9 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * Current class defines how a student should look like
+ */
 public class FacultyEntity {
 
     @Id

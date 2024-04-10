@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Server's response to the client
+ */
 @Getter
 @Setter
 @NoArgsConstructor

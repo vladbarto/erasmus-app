@@ -31,6 +31,7 @@ public class RepresentativeServiceBean implements RepresentativeService{
     @Override
     @Transactional
     public RepresentativeResponseDTO save(RepresentativeRequestDTO representativeRequestDTO) {
+        log.info("Posting an announcement for application {}", applicationName);
         RepresentativeEntity representativeToBeAdded = representativeMapper.representativeRequestDTOToRepresentativeEntity(representativeRequestDTO);
         RepresentativeEntity representativeAdded = representativeRepository.save(representativeToBeAdded);
 

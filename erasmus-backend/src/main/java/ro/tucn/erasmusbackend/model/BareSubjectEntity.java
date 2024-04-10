@@ -15,6 +15,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * Current class defines how a bare subject should look like.
+ * A bare subject is a database with generic (common) subjects for whole Europe.
+ */
 public class BareSubjectEntity {
     @Id
 //    @Column(name = "CAENSUBJECT")

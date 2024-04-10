@@ -13,6 +13,7 @@ import java.util.List;
 
 @Slf4j
 @RequiredArgsConstructor
+
 public class UniversityServiceBean implements UniversityService{
     private final UniversityRepository universityRepository;
     private final UniversityMapper universityMapper;

@@ -13,7 +13,9 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
+/**
+ * Current class defines how a university should look like
+ */
 public class UniversityEntity {
     @Id
     @Column(name = "UNIVERSITYCODE")

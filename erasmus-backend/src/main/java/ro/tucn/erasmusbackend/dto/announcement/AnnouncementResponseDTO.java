@@ -7,11 +7,15 @@ import lombok.Setter;
 
 import java.util.UUID;
 
+/**
+ * Server's response to the client
+ */
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class AnnouncementResponseDTO {
+
     private UUID announcementId;
     private String title;
     private String description;

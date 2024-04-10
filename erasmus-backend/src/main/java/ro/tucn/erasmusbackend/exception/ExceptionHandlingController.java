@@ -9,6 +9,13 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+/**
+ * Controller that handles different types of exceptions:
+ * - no implemented handle for that exception
+ * - invalid arguments
+ * - handle exception - uses ExceptionBody
+ * - get message from invalid arguments
+ */
 @RestControllerAdvice
 public class ExceptionHandlingController {
 

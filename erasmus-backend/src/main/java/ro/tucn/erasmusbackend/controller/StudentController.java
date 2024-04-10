@@ -10,13 +10,19 @@ import ro.tucn.erasmusbackend.dto.student.StudentResponseDTO;
 import ro.tucn.erasmusbackend.service.StudentService;
 
 import java.util.List;
-
+/**
+ * Manages interaction between client and server
+ */
 @RestController
 @RequestMapping("/student/v1")
 @RequiredArgsConstructor
 public class StudentController {
     private final StudentService studentService;
 
+    /**
+     * Method that returns to client all found students
+     * @return list of all students and an http status
+     */
     @GetMapping("/all")
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<StudentResponseDTO>> findAll() {
@@ -26,6 +32,11 @@ public class StudentController {
         );
     }
 
+    /**
+     * Method that sends to the server a save request
+     * @param studentRequestDTO - data of student to be saved
+     * @return the data to be saved and an http status
+     */
     @PostMapping("/save-one")
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<StudentResponseDTO> saveStudent(

@@ -6,6 +6,9 @@ import ro.tucn.erasmusbackend.model.AnnouncementEntity;
 
 import java.util.UUID;
 
+/**
+ * Repository that supports pre-implemented CRUD operations; adapted for announcement
+ */
 @Repository
 public interface AnnouncementRepository extends JpaRepository<AnnouncementEntity, UUID> {
 

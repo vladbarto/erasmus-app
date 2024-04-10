@@ -13,6 +13,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @PrimaryKeyJoinColumn(name = "CNP")
+/**
+ * Current class defines how a faculty should look like
+ */
 public class StudentEntity extends PersonEntity {
 
     @Column(name = "MATRICULATIONNUMBER")

@@ -10,6 +10,9 @@ import org.springframework.http.MediaType;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 
+/**
+ * Handler responsible for cases when access is denied
+ */
 @Slf4j
 @RequiredArgsConstructor
 public class AccessDeniedHandlerBean implements AccessDeniedHandler{

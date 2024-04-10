@@ -21,6 +21,10 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * Current class defines how a user should look like.
+ * This class is compact and important for security.
+ */
 public class UserEntity {
 
     @Id

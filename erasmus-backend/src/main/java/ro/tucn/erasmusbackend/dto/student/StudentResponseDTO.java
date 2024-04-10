@@ -6,11 +6,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import ro.tucn.erasmusbackend.dto.person.PersonResponseDTO;
 
+/**
+ * Server's response to the client
+ */
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class StudentResponseDTO extends PersonResponseDTO {
+
     private Integer matriculationNumber;
     private int yearOfStudy;
     private boolean hasCertificateLanguage;
