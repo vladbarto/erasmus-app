@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import ro.tucn.erasmusbackend.dto.announcement.AnnouncementResponseDTO;
 import ro.tucn.erasmusbackend.dto.faculty.FacultyRequestDTO;
 import ro.tucn.erasmusbackend.dto.faculty.FacultyResponseDTO;
 import ro.tucn.erasmusbackend.exception.ExceptionBody;
@@ -30,7 +29,7 @@ public class FacultyController {
 
     /**
      * Method that returns to client all found faculties
-     * @return list of all faculties and an http status
+     * @return list of all faculties and a http status
      */
     @GetMapping("/all")
     @Operation(summary = "Gets all faculties", description = "at least a faculty must exist")
@@ -53,7 +52,7 @@ public class FacultyController {
     /**
      * Method that sends to the server a save request
      * @param facultyRequestDTO - data of faculty to be saved
-     * @return the data to be saved and an http status
+     * @return the data to be saved and a http status
      */
     @PostMapping("/save-one")
     @Operation(summary = "Save one faculty")

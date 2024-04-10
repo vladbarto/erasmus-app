@@ -39,9 +39,7 @@ public class UniqueSubjectController {
             @ApiResponse(responseCode = "500", description = "Internal server error",
                     content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))})
     })
-    public void fct() {
-        ;
-    }
+    public void fct() {}
 
     /**
      * Method that returns to client all found unique subjects
@@ -68,7 +66,7 @@ public class UniqueSubjectController {
     /**
      * Method that sends to the server a save request
      * @param uniqueSubjectRequestDTO - data of unique subject to be saved
-     * @return the data to be saved and an http status
+     * @return the data to be saved and a http status
      */
     @PostMapping("/save-one")
     @Operation(summary = "Save one unique subject")

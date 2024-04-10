@@ -44,13 +44,11 @@ public class BareSubjectController {
             @ApiResponse(responseCode = "500", description = "Internal server error",
                     content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))})
     })
-    public void fct() {
-        ;
-    }
+    public void fct() {}
 
     /**
      * Method that returns to client all found bare subjects
-     * @return list of all bare subjects and an http status
+     * @return list of all bare subjects and a http status
      */
     @GetMapping("/all")
     @Operation(summary = "Gets all bare subjects", description = "at least one bare subject must exist")
@@ -73,7 +71,7 @@ public class BareSubjectController {
     /**
      * Method that sends to the server a save request
      * @param bareSubjectRequestDTO - data of bare subject to be saved
-     * @return the data to be saved and an http status
+     * @return the data to be saved and a http status
      */
     @PostMapping("/save-one")
     @Operation(summary = "Save one bare subject")

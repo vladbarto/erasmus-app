@@ -28,7 +28,7 @@ public class UniversityController {
 
     /**
      * Method that returns to client all found universities
-     * @return list of all universities and an http status
+     * @return list of all universities and a http status
      */
     @GetMapping("/all")
     @Operation(summary = "Gets all universities", description = "at least one university must exist")
@@ -51,7 +51,7 @@ public class UniversityController {
     /**
      * Method that sends to the server a save request
      * @param universityRequestDTO - data of university to be saved
-     * @return the data to be saved and an http status
+     * @return the data to be saved and a http status
      */
     @PostMapping("/save-one")
     @Operation(summary = "Save one university")

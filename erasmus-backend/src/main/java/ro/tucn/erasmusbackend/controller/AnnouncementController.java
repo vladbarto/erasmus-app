@@ -21,19 +21,19 @@ import ro.tucn.erasmusbackend.service.AnnouncementService;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/announcement/v1")
-@RequiredArgsConstructor
 /**
  * Manages interaction between client and server
  */
+@RestController
+@RequestMapping("/announcement/v1")
+@RequiredArgsConstructor
 public class AnnouncementController {
 
     private final AnnouncementService announcementService;
 
     /**
      * Method that returns to client all found announcements
-     * @return list of all announcements and an http status
+     * @return list of all announcements and a http status
      */
     @GetMapping("/all")
     @Operation(summary = "Gets all announcements", description = "at least an announcement must exist")
@@ -56,7 +56,7 @@ public class AnnouncementController {
     /**
      * Method that sends to the server a save request
      * @param announcementRequestDTO - data of announcement to be saved
-     * @return the data to be saved and an http status
+     * @return the data to be saved and a http status
      */
     @PostMapping("/save-one")
     @Operation(summary = "Save one announcements")

@@ -28,7 +28,7 @@ public class RepresentativeController {
 
     /**
      * Method that returns to client all found representatives
-     * @return list of all representatives and an http status
+     * @return list of all representatives and a http status
      */
     @GetMapping("/all")
     @Operation(summary = "Gets all representatives", description = "at least a representative must exist")
@@ -51,7 +51,7 @@ public class RepresentativeController {
     /**
      * Method that sends to the server a save request
      * @param representativeRequestDTO - data of representative to be saved
-     * @return the data to be saved and an http status
+     * @return the data to be saved and a http status
      */
     @PostMapping("/save-one")
     @Operation(summary = "Save one representative")
