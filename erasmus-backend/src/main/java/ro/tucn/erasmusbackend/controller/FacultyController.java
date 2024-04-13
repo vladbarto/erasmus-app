@@ -67,4 +67,6 @@ public class FacultyController {
                 HttpStatus.CREATED
         );
     }
+
+
 }

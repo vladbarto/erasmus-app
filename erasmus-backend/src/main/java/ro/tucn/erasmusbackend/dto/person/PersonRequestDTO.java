@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
+import java.util.UUID;
+
 /**
  * Client's request to the server
  */
@@ -13,6 +16,13 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PersonRequestDTO {
+
     private String CNP;
     private String name;
+    private String phoneNumber;
+    private Date dateOfBirth;
+    private String universityCode;
+    private UUID facultyCode;
+    private String country;
+    private String city;
 }

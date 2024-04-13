@@ -28,6 +28,9 @@ public class PersonEntity {
     private UserEntity user;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID personId;
+
     @Column(name = "CNP")
     /**
      * This attribute (equivalent of Social Security Number - for US developers) uniquely identifies a person.
