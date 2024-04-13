@@ -50,7 +50,7 @@ public class AuthorizationFilter extends OncePerRequestFilter {
                     .parse(jwtToken)
                     .getPayload();
             String email = claims.getSubject();
-            Collection<SimpleGrantedAuthority> authorities = ((List<String>) claims.get("ROLE")).stream()
+            Collection<SimpleGrantedAuthority> authorities = ((List<String>) claims.get("role")).stream()
                     .map(SimpleGrantedAuthority::new)
                     .toList();
             Authentication authentication = new UsernamePasswordAuthenticationToken(email, null, authorities);

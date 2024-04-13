@@ -15,5 +15,8 @@ import ro.tucn.erasmusbackend.dto.person.PersonRequestDTO;
 @AllArgsConstructor
 public class StudentRequestDTO extends PersonRequestDTO {
 
-    private Integer matriculationNumber;
+    private int yearOfStudy;
+    private boolean hasCertificateLanguage;
+    private float gpa;
+    private boolean hasReexaminations;
 }

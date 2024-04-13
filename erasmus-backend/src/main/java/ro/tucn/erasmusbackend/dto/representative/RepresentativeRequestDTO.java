@@ -16,5 +16,6 @@ import ro.tucn.erasmusbackend.model.Type;
 @AllArgsConstructor
 public class RepresentativeRequestDTO extends PersonRequestDTO {
 
+    private String titles;
     private Type type;
 }
