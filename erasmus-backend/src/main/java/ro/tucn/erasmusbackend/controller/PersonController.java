@@ -14,8 +14,11 @@ import ro.tucn.erasmusbackend.dto.person.PersonRequestDTO;
 import ro.tucn.erasmusbackend.dto.person.PersonResponseDTO;
 import ro.tucn.erasmusbackend.exception.ExceptionBody;
 import ro.tucn.erasmusbackend.service.PersonService;
+import ro.tucn.erasmusbackend.model.PersonEntity;
 
 import java.util.List;
+import java.util.Optional;
+
 /**
  * Manages interaction between client and server
  */
@@ -52,7 +55,7 @@ public class PersonController {
      * @param personRequestDTO - data of person to be saved
      * @return the data to be saved and a http status
      */
-    @PostMapping("/save-one")
+    @PostMapping("/one")
     @Operation(summary = "Save one Person")
     @ApiResponse(responseCode = "201", description = "Person successfully created",
             content = {@Content(mediaType = "application/json", schema = @Schema(implementation = PersonResponseDTO.class))})
@@ -65,4 +68,24 @@ public class PersonController {
                 HttpStatus.CREATED
         );
     }
+
+//    @DeleteMapping("/{name}")
+//    @Operation(summary = "Delete one Person")
+//    @ApiResponses(value = {
+//            @ApiResponse(responseCode = "201", description = "Person successfully deleted",
+//                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = PersonResponseDTO.class))}),
+//            @ApiResponse(responseCode = "409", description = "Nonexistent person",
+//                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))}),
+//            @ApiResponse(responseCode = "500", description = "Internal server error",
+//                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))})
+//    })
+//    @PreAuthorize("hasRole('ADMIN')")
+//    public ResponseEntity<PersonResponseDTO> deletePerson(@PathVariable("name") String name) {
+//        Optional<PersonEntity> existingPerson = this.personService.findByName(name);
+//        if(existingPerson.isPresent()){
+//            this.personService.delete(existingPerson.get());
+//            return ResponseEntity.ok().build();
+//        }
+//        return ResponseEntity.notFound().build();
+//    }
 }

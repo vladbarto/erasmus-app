@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@PrimaryKeyJoinColumn(name = "CNP")
+@PrimaryKeyJoinColumn(name = "personId")
 /**
  * Current class defines how a faculty should look like
  */

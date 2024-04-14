@@ -5,9 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ro.tucn.erasmusbackend.dto.person.PersonResponseDTO;
-
-import java.util.UUID;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -16,7 +13,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@PrimaryKeyJoinColumn(name = "CNP")
+@PrimaryKeyJoinColumn(name = "personId")
 /**
  * Current class defines how a representative should look like.
  * Representative = Representing (aka Responsible) Teacher; or a Secretary
