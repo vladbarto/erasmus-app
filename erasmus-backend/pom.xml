@@ -11,9 +11,9 @@
 	</parent>
 
 	<groupId>ro.ps</groupId>
-	<artifactId>chef-mgmt-backend</artifactId>
+	<artifactId>erasmus-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>chef-mgmt-backend</name>
+	<name>erasmus-backend</name>
 	<description>Erasmus app project</description>
 
 	<properties>
