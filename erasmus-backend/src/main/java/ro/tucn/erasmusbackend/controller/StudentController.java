@@ -50,7 +50,7 @@ public class StudentController {
     /**
      * Method that sends to the server a save request
      * @param studentRequestDTO - data of student to be saved
-     * @return the data to be saved and a http status
+     * @return the data to be saved and  a http status
      */
     @PostMapping("/save-one")
     @Operation(summary = "Save one student")
