@@ -1,5 +1,8 @@
 # Aplicatia Erasmus - EuT+
 
+## LINKURI SUPERUTILE
+- https://www.youtube.com/watch?v=Np3ULAMqwNo
+
 ## Description
 This project is a web platform for students that want to experiment an exchange mobility.
 
