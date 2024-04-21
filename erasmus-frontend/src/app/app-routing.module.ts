@@ -10,7 +10,7 @@ export const routes: Routes = [
     canActivate: [ authGuard ],
     data: {
       jwtTokenPresent: false,
-      redirectUrl: '/dashboard/chefs'
+      redirectUrl: '/dashboard/faculties'
     }
   },
   {
