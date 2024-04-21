@@ -16,6 +16,7 @@ import ro.tucn.erasmusbackend.exception.ExceptionBody;
 import ro.tucn.erasmusbackend.service.FacultyService;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Manages interaction between client and server
@@ -27,10 +28,24 @@ public class FacultyController {
 
     private final FacultyService facultyService;
 
-    /**
-     * Method that returns to client all found faculties
-     * @return list of all faculties and a http status
-     */
+    @GetMapping("/{id}")
+    @Operation(summary = "Gets one specific faculty", description = "the faculty must exist")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Faculty found",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = FacultyResponseDTO.class))}),
+            @ApiResponse(responseCode = "404", description = "Faculty not found",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))}),
+            @ApiResponse(responseCode = "500", description = "Internal server error",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))})
+    })
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+    public ResponseEntity<FacultyResponseDTO> findById(@PathVariable("id") UUID facultyId) {
+        return new ResponseEntity<>(
+                facultyService.findById(facultyId),
+                HttpStatus.OK
+        );
+    }
+
     @GetMapping("/all")
     @Operation(summary = "Gets all faculties", description = "at least a faculty must exist")
     @ApiResponses(value = {
@@ -54,7 +69,7 @@ public class FacultyController {
      * @param facultyRequestDTO - data of faculty to be saved
      * @return the data to be saved and a http status
      */
-    @PostMapping("/save-one")
+    @PostMapping("/all")
     @Operation(summary = "Save one faculty")
     @ApiResponse(responseCode = "201", description = "Faculty successfully created",
             content = {@Content(mediaType = "application/json", schema = @Schema(implementation = FacultyResponseDTO.class))})

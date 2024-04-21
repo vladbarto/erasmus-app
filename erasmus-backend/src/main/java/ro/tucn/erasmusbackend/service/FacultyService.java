@@ -4,6 +4,7 @@ import ro.tucn.erasmusbackend.dto.faculty.FacultyRequestDTO;
 import ro.tucn.erasmusbackend.dto.faculty.FacultyResponseDTO;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Service class that defines Faculty CRUD operations
@@ -18,6 +19,13 @@ public interface FacultyService {
      * @return list of all faculties
      */
     List<FacultyResponseDTO> findAll();
+
+    /**
+     * Method that returns details of a faculty
+     * @param facultyId desired faculty id
+     * @return details of desired faculty
+     */
+    FacultyResponseDTO findById(UUID facultyId);
 
     /**
      * Method that saves a faculty

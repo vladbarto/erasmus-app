@@ -9,7 +9,11 @@ import ro.tucn.erasmusbackend.mapper.FacultyMapper;
 import ro.tucn.erasmusbackend.model.FacultyEntity;
 import ro.tucn.erasmusbackend.repository.FacultyRepository;
 
+import ro.tucn.erasmusbackend.exception.NotFoundException;
+import ro.tucn.erasmusbackend.exception.ExceptionCode;
+
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -25,6 +29,16 @@ public class FacultyServiceBean implements FacultyService {
         List<FacultyEntity> facultyEntityList = facultyRepository.findAll();
 
         return facultyMapper.facultyEntityListToFacultyResponseDTOList(facultyEntityList);
+    }
+
+    @Override
+    public FacultyResponseDTO findById(UUID facultyId) {
+        return facultyRepository.findById(facultyId)
+                .map(facultyMapper::facultyEntityToFacultyResponseDTO)
+                .orElseThrow(() -> new NotFoundException(String.format(
+                        ExceptionCode.ERR001_CHEF_NOT_FOUND.getMessage(),
+                        facultyId
+                )));
     }
 
     @Override
