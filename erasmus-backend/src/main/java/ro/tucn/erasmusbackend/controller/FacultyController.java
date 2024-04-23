@@ -24,6 +24,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/faculty/v1")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 public class FacultyController {
 
     private final FacultyService facultyService;

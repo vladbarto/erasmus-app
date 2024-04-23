@@ -23,6 +23,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/person/v1")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 public class PersonController {
     private final PersonService personService;
 
