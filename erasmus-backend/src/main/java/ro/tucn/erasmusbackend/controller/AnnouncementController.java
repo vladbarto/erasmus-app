@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ro.tucn.erasmusbackend.dto.announcement.AnnouncementRequestDTO;
 import ro.tucn.erasmusbackend.dto.announcement.AnnouncementResponseDTO;
 import ro.tucn.erasmusbackend.exception.ExceptionBody;
-import ro.tucn.erasmusbackend.service.AnnouncementService;
+import ro.tucn.erasmusbackend.service.announcement.AnnouncementService;
 
 import java.util.List;
 

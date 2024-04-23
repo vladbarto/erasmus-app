@@ -1,4 +1,4 @@
-package ro.tucn.erasmusbackend.service;
+package ro.tucn.erasmusbackend.service.announcement;
 
 import ro.tucn.erasmusbackend.dto.announcement.AnnouncementRequestDTO;
 import ro.tucn.erasmusbackend.dto.announcement.AnnouncementResponseDTO;

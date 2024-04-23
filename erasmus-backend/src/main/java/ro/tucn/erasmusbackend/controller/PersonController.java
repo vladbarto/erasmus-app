@@ -13,11 +13,9 @@ import org.springframework.web.bind.annotation.*;
 import ro.tucn.erasmusbackend.dto.person.PersonRequestDTO;
 import ro.tucn.erasmusbackend.dto.person.PersonResponseDTO;
 import ro.tucn.erasmusbackend.exception.ExceptionBody;
-import ro.tucn.erasmusbackend.service.PersonService;
-import ro.tucn.erasmusbackend.model.PersonEntity;
+import ro.tucn.erasmusbackend.service.person.PersonService;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Manages interaction between client and server

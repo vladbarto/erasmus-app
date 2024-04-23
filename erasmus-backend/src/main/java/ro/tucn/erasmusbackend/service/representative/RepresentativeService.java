@@ -1,4 +1,4 @@
-package ro.tucn.erasmusbackend.service;
+package ro.tucn.erasmusbackend.service.representative;
 
 import ro.tucn.erasmusbackend.dto.representative.RepresentativeRequestDTO;
 import ro.tucn.erasmusbackend.dto.representative.RepresentativeResponseDTO;

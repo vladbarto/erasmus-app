@@ -1,4 +1,4 @@
-package ro.tucn.erasmusbackend.service;
+package ro.tucn.erasmusbackend.service.bareSubject;
 
 import ro.tucn.erasmusbackend.dto.bareSubject.BareSubjectRequestDTO;
 import ro.tucn.erasmusbackend.dto.bareSubject.BareSubjectResponseDTO;

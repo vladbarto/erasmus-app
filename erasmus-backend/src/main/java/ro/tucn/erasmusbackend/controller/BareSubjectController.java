@@ -14,11 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ro.tucn.erasmusbackend.dto.announcement.AnnouncementResponseDTO;
 import ro.tucn.erasmusbackend.dto.bareSubject.BareSubjectRequestDTO;
 import ro.tucn.erasmusbackend.dto.bareSubject.BareSubjectResponseDTO;
 import ro.tucn.erasmusbackend.exception.ExceptionBody;
-import ro.tucn.erasmusbackend.service.BareSubjectService;
+import ro.tucn.erasmusbackend.service.bareSubject.BareSubjectService;
 
 import java.util.List;
 /**

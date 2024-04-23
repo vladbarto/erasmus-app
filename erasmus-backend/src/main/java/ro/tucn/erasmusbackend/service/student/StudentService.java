@@ -1,4 +1,4 @@
-package ro.tucn.erasmusbackend.service;
+package ro.tucn.erasmusbackend.service.student;
 
 import ro.tucn.erasmusbackend.dto.student.StudentRequestDTO;
 import ro.tucn.erasmusbackend.dto.student.StudentResponseDTO;

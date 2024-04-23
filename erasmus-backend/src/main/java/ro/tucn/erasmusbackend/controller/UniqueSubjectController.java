@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ro.tucn.erasmusbackend.dto.uniqueSubject.UniqueSubjectRequestDTO;
 import ro.tucn.erasmusbackend.dto.uniqueSubject.UniqueSubjectResponseDTO;
 import ro.tucn.erasmusbackend.exception.ExceptionBody;
-import ro.tucn.erasmusbackend.service.UniqueSubjectService;
+import ro.tucn.erasmusbackend.service.uniqueSubject.UniqueSubjectService;
 
 import java.util.List;
 /**

@@ -1,4 +1,4 @@
-package ro.tucn.erasmusbackend.service;
+package ro.tucn.erasmusbackend.service.representative;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

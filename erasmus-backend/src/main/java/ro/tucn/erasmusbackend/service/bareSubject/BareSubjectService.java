@@ -1,4 +1,4 @@
-package ro.tucn.erasmusbackend.service;
+package ro.tucn.erasmusbackend.service.bareSubject;
 
 import org.springframework.stereotype.Service;
 import ro.tucn.erasmusbackend.dto.bareSubject.BareSubjectRequestDTO;

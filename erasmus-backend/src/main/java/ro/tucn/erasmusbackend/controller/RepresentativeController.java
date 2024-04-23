@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import ro.tucn.erasmusbackend.dto.representative.RepresentativeRequestDTO;
 import ro.tucn.erasmusbackend.dto.representative.RepresentativeResponseDTO;
 import ro.tucn.erasmusbackend.exception.ExceptionBody;
-import ro.tucn.erasmusbackend.service.RepresentativeService;
+import ro.tucn.erasmusbackend.service.representative.RepresentativeService;
 import java.util.List;
 
 /**

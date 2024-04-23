@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import ro.tucn.erasmusbackend.dto.university.UniversityRequestDTO;
 import ro.tucn.erasmusbackend.dto.university.UniversityResponseDTO;
 import ro.tucn.erasmusbackend.exception.ExceptionBody;
-import ro.tucn.erasmusbackend.service.UniversityService;
+import ro.tucn.erasmusbackend.service.university.UniversityService;
 
 import java.util.List;
 /**

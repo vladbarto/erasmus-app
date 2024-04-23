@@ -1,4 +1,4 @@
-package ro.tucn.erasmusbackend.service;
+package ro.tucn.erasmusbackend.service.faculty;
 
 import ro.tucn.erasmusbackend.dto.faculty.FacultyRequestDTO;
 import ro.tucn.erasmusbackend.dto.faculty.FacultyResponseDTO;

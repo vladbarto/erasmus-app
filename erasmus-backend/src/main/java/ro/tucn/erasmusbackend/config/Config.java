@@ -5,10 +5,35 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ro.tucn.erasmusbackend.mapper.*;
 import ro.tucn.erasmusbackend.repository.*;
-import ro.tucn.erasmusbackend.service.*;
+import ro.tucn.erasmusbackend.service.announcement.AnnouncementService;
+import ro.tucn.erasmusbackend.service.announcement.AnnouncementServiceBean;
+import ro.tucn.erasmusbackend.service.bareSubject.BareSubjectService;
+import ro.tucn.erasmusbackend.service.bareSubject.BareSubjectServiceBean;
+import ro.tucn.erasmusbackend.service.faculty.FacultyService;
+import ro.tucn.erasmusbackend.service.faculty.FacultyServiceBean;
+import ro.tucn.erasmusbackend.service.person.PersonService;
+import ro.tucn.erasmusbackend.service.person.PersonServiceBean;
+import ro.tucn.erasmusbackend.service.representative.RepresentativeService;
+import ro.tucn.erasmusbackend.service.representative.RepresentativeServiceBean;
+import ro.tucn.erasmusbackend.service.student.StudentService;
+import ro.tucn.erasmusbackend.service.student.StudentServiceBean;
+import ro.tucn.erasmusbackend.service.uniqueSubject.UniqueSubjectService;
+import ro.tucn.erasmusbackend.service.uniqueSubject.UniqueSubjectServiceBean;
+import ro.tucn.erasmusbackend.service.university.UniversityService;
+import ro.tucn.erasmusbackend.service.university.UniversityServiceBean;
+import ro.tucn.erasmusbackend.service.user.UserService;
+import ro.tucn.erasmusbackend.service.user.UserServiceBean;
 
 @Configuration
 public class Config {
+
+    @Bean
+    public UserService userServiceBean(
+            UserRepository userRepository,
+            UserMapper userMapper
+    ) {
+        return new UserServiceBean(userRepository, userMapper);
+    }
 
     @Bean
     public BareSubjectService bareSubjectService(
