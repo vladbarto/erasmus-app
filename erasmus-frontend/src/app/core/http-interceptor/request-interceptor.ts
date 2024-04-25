@@ -13,7 +13,7 @@ export const requestInterceptor: HttpInterceptorFn = (req, next) => {
 };
 
 const getUrl = (url: string): string => {
-  return 'http://localhost:8777/api/' + url;
+  return 'http://localhost:6583/api/' + url;
 };
 
 const getHeaders = (url: string): HttpHeaders => {

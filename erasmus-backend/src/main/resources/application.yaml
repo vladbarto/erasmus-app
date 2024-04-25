@@ -13,7 +13,7 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
 server:
-  port: 8777
+  port: 6583
   servlet:
     context-path: '/api'
   error:
