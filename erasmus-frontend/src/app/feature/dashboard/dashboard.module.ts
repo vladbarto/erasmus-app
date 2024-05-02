@@ -4,7 +4,7 @@ import {DashboardRoutingModule} from "./dashboard-routing.module";
 import { FacultyComponent } from './faculty/faculty.component';
 import { FacultiesComponent } from './faculties/faculties.component';
 import { FacultyCardComponent } from './faculties/faculty-card/faculty-card.component';
-
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +15,8 @@ import { FacultyCardComponent } from './faculties/faculty-card/faculty-card.comp
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    FormsModule
   ]
 })
 export class DashboardModule { }

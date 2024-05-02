@@ -70,7 +70,7 @@ public class FacultyController {
      * @param facultyRequestDTO - data of faculty to be saved
      * @return the data to be saved and a http status
      */
-    @PostMapping("/{id}")
+    @PostMapping("/one")
     @Operation(summary = "Save one faculty")
     @ApiResponse(responseCode = "201", description = "Faculty successfully created",
             content = {@Content(mediaType = "application/json", schema = @Schema(implementation = FacultyResponseDTO.class))})

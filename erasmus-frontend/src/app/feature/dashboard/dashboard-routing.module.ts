@@ -11,6 +11,10 @@ export const routes: Routes = [
     component: FacultiesComponent
   },
   {
+    path: 'faculty/:id',
+    component: FacultyComponent,
+  },
+  {
     path: '**',
     component: NotFoundComponent
   }
