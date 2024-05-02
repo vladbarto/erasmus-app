@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public enum ExceptionCode {
-    ERR001_CHEF_NOT_FOUND("Chef with ID %s not found"),
+    ERR001_FACULTY_NOT_FOUND("Faculty with ID %s not found"),
     ERR002_USERNAME_NOT_FOUND("Username %s not found"),
     ERR099_INVALID_CREDENTIALS("Invalid credentials.");
 

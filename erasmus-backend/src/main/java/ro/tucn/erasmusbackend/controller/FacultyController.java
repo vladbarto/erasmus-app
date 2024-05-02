@@ -70,7 +70,7 @@ public class FacultyController {
      * @param facultyRequestDTO - data of faculty to be saved
      * @return the data to be saved and a http status
      */
-    @PostMapping("/all")
+    @PostMapping("/{id}")
     @Operation(summary = "Save one faculty")
     @ApiResponse(responseCode = "201", description = "Faculty successfully created",
             content = {@Content(mediaType = "application/json", schema = @Schema(implementation = FacultyResponseDTO.class))})
@@ -84,5 +84,29 @@ public class FacultyController {
         );
     }
 
+    @PutMapping("/{id}")
+    @Operation(summary = "Update one faculty")
+    @ApiResponse(responseCode = "301", description = "Faculty successfully updated",
+            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = FacultyResponseDTO.class))})
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<FacultyResponseDTO> updateFaculty(
+            @RequestBody FacultyRequestDTO facultyRequestDTO, @PathVariable("id") UUID facultyId
+    ) {
+        return new ResponseEntity<>(
+                facultyService.update(facultyRequestDTO, facultyId),
+                HttpStatus.OK
+        );
+    }
 
+    @DeleteMapping("/{id}")
+    @Operation(summary = "Delete one faculty")
+    @ApiResponse(responseCode = "301", description = "Faculty successfully deleted",
+            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = FacultyResponseDTO.class))})
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<FacultyResponseDTO> deleteById(@PathVariable("id") UUID facultyId) {
+        return new ResponseEntity<>(
+                facultyService.deleteById(facultyId),
+                HttpStatus.OK
+        );
+    }
 }

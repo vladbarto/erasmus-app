@@ -33,4 +33,8 @@ public interface FacultyService {
      * @return object of type ResponseDTO containing all attributes of a Faculty saved in DB
      */
     FacultyResponseDTO save(FacultyRequestDTO facultyRequestDTO);
+
+    FacultyResponseDTO update(FacultyRequestDTO facultyRequestDTO, UUID facultyId);
+
+    FacultyResponseDTO deleteById(UUID facultyId);
 }
