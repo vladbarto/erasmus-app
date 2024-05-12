@@ -1,4 +1,5 @@
 <div class="container">
+  <app-add-faculty (onAddFaculty)="addFaculty($event)"></app-add-faculty>
   <h5>All faculties</h5>
 
   <div class="mb-3 d-flex flex-row">
@@ -23,34 +24,6 @@
         <p>No faculty</p>
         }
       </div>
-    </div>
-
-
-    <div class="ml-10 border border-warning" style="width: 700px;">
-      <h3>Add new faculty</h3>
-      <div class="container d-flex justify-content-center mt-5">
-        <div class="card shadow-lg w-50 p-2">
-          <form>
-            <div class="form-group">
-              <label for="exampleFormControlInput1">Name</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Numele facultății">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlInput1">University Code</label>
-              <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlInput1">Composite Key</label>
-              <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1">Description</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="A nice fat description"></textarea>
-            </div>
-          </form>
-        </div>
-      </div>
-
     </div>
 
   </div>

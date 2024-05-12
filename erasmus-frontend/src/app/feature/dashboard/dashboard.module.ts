@@ -4,19 +4,24 @@ import {DashboardRoutingModule} from "./dashboard-routing.module";
 import { FacultyComponent } from './faculty/faculty.component';
 import { FacultiesComponent } from './faculties/faculties.component';
 import { FacultyCardComponent } from './faculties/faculty-card/faculty-card.component';
-import { FormsModule } from '@angular/forms';
+import { AddFacultyComponent } from './faculties/add-faculty/add-faculty.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UpdateFacultyComponent } from './faculty/update-faculty/update-faculty.component';
 
 
 @NgModule({
   declarations: [
     FacultyComponent,
     FacultiesComponent,
-    FacultyCardComponent
+    FacultyCardComponent,
+    AddFacultyComponent,
+    UpdateFacultyComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DashboardModule { }

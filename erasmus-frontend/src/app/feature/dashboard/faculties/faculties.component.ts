@@ -45,8 +45,11 @@ export class FacultiesComponent implements OnInit {
         );
   }
 
-  insertOne() {
-
+  addFaculty(faculty: FacultyModel) {
+    console.log(faculty);
+    this.facultyService
+        .insert(faculty)
+        .subscribe( (faculty) => this.faculties.push(faculty) );
   }
 
   logOut(): void {

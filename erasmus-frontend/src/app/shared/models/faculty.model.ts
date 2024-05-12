@@ -1,5 +1,5 @@
 export interface FacultyModel {
-   facultyCode: string;
+   facultyCode?: string; //id-ul meu tip UUID
    name: string;
    universityCode: string;
    description: string;

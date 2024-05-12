@@ -35,4 +35,11 @@ export class FacultyComponent {
             .subscribe(response => this.faculty = response);
         });
     }
+
+  updateFaculty(faculty: FacultyModel) {
+    this.facultyService
+        .update(faculty, this.facultyId!)
+        .subscribe();
+    window.location.reload();
+  }
 }

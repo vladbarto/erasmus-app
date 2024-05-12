@@ -21,9 +21,17 @@ export class FacultyService {
       });
    }
 
-   deleteById(facultyId: string): Observable<FacultyModel> {
+  deleteById(facultyId: string): Observable<FacultyModel> {
       return this.http.delete<FacultyModel>(`faculty/v1/${facultyId}`)
    }
+
+  insert(faculty: FacultyModel): Observable<FacultyModel> {
+      return this.http.post<FacultyModel>(`faculty/v1/one`, faculty);
+  }
+
+  update(faculty: FacultyModel, facultyId: string): Observable<FacultyModel> {
+      return this.http.put<FacultyModel>(`faculty/v1/${facultyId}`, faculty);
+  }
 
 
 //   getAll(rating: number = 0): Observable<ChefModel[]> {
