@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(response => {
         localStorage.setItem('loggedUser', JSON.stringify(response));
-        this.router.navigateByUrl('/dashboard/faculties');
+        this.router.navigateByUrl('/dashboard/home');
       });
   }
 }

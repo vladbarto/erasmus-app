@@ -15,7 +15,7 @@ export class FacultiesComponent implements OnInit {
   constructor(
     private facultyService: FacultyService,
     private router: Router,
-    private destroyRef: DestroyRef,
+    private destroyRef: DestroyRef
   ) {
   }
 

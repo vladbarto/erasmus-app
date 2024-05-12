@@ -3,9 +3,23 @@ import {RouterModule, Routes} from "@angular/router";
 import {NotFoundComponent} from "../../shared/components/not-found/not-found.component";
 import {FacultiesComponent} from "./faculties/faculties.component";
 import {FacultyComponent} from "./faculty/faculty.component";
-
+import {HomeComponent} from "./home/home.component";
+import {AnnouncementsComponent} from "./announcements/announcements.component";
+import {AnnouncementComponent} from "./announcement/announcement.component";
 
 export const routes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+      path: 'announcements',
+      component: AnnouncementsComponent
+  },
+  {
+    path: 'announcement/:id',
+    component: AnnouncementComponent,
+  },
   {
     path: 'faculties',
     component: FacultiesComponent

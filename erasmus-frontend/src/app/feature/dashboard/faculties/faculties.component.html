@@ -1,14 +1,11 @@
-<div class="container">
+<div class="container d-flex flex-column align-items-center bg-light">
   <app-add-faculty (onAddFaculty)="addFaculty($event)"></app-add-faculty>
-  <h5>All faculties</h5>
+  <h3>A list of all faculties</h3>
 
   <div class="mb-3 d-flex flex-row">
-
     <div class="mb-3 d-flex flex-column">
       <div class="mb-3 d-flex flex-row">
         <label class="form-label">Rating: </label>
-        <!--input [(ngModel)]="rating" class="form-control" type="number"-->
-
         <button (click)="searchAll()" class="btn btn-info">
           <i class="fa fa-magnifying-glass"></i>
         </button>
@@ -25,6 +22,5 @@
         }
       </div>
     </div>
-
   </div>
 </div>

@@ -29,7 +29,7 @@ public class AnnouncementEntity {
     private String description;
 
     @Column(name = "REPRESENTATIVEID")
-    private int representativeId;
+    private UUID representativeId;
 
     @Column(name = "UNIVERSITYCODE")
     private String universityCode;
