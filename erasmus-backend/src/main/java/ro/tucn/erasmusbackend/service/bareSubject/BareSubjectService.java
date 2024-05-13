@@ -5,6 +5,8 @@ import ro.tucn.erasmusbackend.dto.bareSubject.BareSubjectRequestDTO;
 import ro.tucn.erasmusbackend.dto.bareSubject.BareSubjectResponseDTO;
 
 import java.util.List;
+import java.util.UUID;
+
 /**
  * Service class that defines Bare Subject CRUD operations
  * This includes:
@@ -26,4 +28,15 @@ public interface BareSubjectService {
      * @return object of type ResponseDTO containing all attributes of an BareSubject saved in DB
      */
     BareSubjectResponseDTO save(BareSubjectRequestDTO bareSubjectRequestDTO);
+
+    /**
+     * Method that returns details of a bareSubject
+     * @param bareSubjectId desired bareSubject id
+     * @return details of desired bareSubject
+     */
+    BareSubjectResponseDTO findById(UUID bareSubjectId);
+
+    BareSubjectResponseDTO update(BareSubjectRequestDTO bareSubjectRequestDTO, UUID bareSubjectId);
+
+    BareSubjectResponseDTO deleteById(UUID bareSubjectId);
 }

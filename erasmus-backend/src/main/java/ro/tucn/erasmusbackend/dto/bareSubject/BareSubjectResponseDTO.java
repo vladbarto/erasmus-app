@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 /**
  * Server's response to the client
  */
@@ -14,6 +16,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class BareSubjectResponseDTO {
 
+    private UUID id;
     private Integer CAENSubject;
     private String compositeKey;
     private String description;

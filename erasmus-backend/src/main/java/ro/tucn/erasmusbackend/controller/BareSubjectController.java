@@ -16,6 +16,8 @@ import ro.tucn.erasmusbackend.exception.ExceptionBody;
 import ro.tucn.erasmusbackend.service.bareSubject.BareSubjectService;
 
 import java.util.List;
+import java.util.UUID;
+
 /**
  * Manages interaction between client and server
  */
@@ -26,9 +28,9 @@ import java.util.List;
 public class BareSubjectController {
 
     private final BareSubjectService bareSubjectService;
-
+    
     /**
-     * TO BE IMPLEMENTED: method that gets Bare Subjects by CAEN Code (its ID)
+     * method that gets Bare Subjects by CAEN Code (its ID)
      */
     @GetMapping("/{id}")
     @Operation(summary = "Gets Bare Subjects by CAEN Code", description = "Subject must exist")
@@ -40,8 +42,14 @@ public class BareSubjectController {
             @ApiResponse(responseCode = "500", description = "Internal server error",
                     content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))})
     })
-    public void fct() {}
-
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+    public ResponseEntity<BareSubjectResponseDTO> findById(@PathVariable("id") UUID bareSubjectId) {
+        return new ResponseEntity<>(
+                bareSubjectService.findById(bareSubjectId),
+                HttpStatus.OK
+        );
+    }
+    
     /**
      * Method that returns to client all found bare subjects
      * @return list of all bare subjects and a http status
@@ -69,7 +77,7 @@ public class BareSubjectController {
      * @param bareSubjectRequestDTO - data of bare subject to be saved
      * @return the data to be saved and a http status
      */
-    @PostMapping("/save-one")
+    @PostMapping("/one")
     @Operation(summary = "Save one bare subject")
     @ApiResponse(responseCode = "201", description = "Bare subject successfully created",
             content = {@Content(mediaType = "application/json", schema = @Schema(implementation = BareSubjectResponseDTO.class))})
@@ -80,6 +88,32 @@ public class BareSubjectController {
         return new ResponseEntity<>(
                 bareSubjectService.save(bareSubjectRequestDTO),
                 HttpStatus.CREATED
+        );
+    }
+
+    @PutMapping("/{id}")
+    @Operation(summary = "Update one bareSubject")
+    @ApiResponse(responseCode = "301", description = "BareSubject successfully updated",
+            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = BareSubjectResponseDTO.class))})
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<BareSubjectResponseDTO> updateBareSubject(
+            @RequestBody BareSubjectRequestDTO bareSubjectRequestDTO, @PathVariable("id") UUID bareSubjectId
+    ) {
+        return new ResponseEntity<>(
+                bareSubjectService.update(bareSubjectRequestDTO, bareSubjectId),
+                HttpStatus.OK
+        );
+    }
+
+    @DeleteMapping("/{id}")
+    @Operation(summary = "Delete one bareSubject")
+    @ApiResponse(responseCode = "301", description = "BareSubject successfully deleted",
+            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = BareSubjectResponseDTO.class))})
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<BareSubjectResponseDTO> deleteById(@PathVariable("id") UUID bareSubjectId) {
+        return new ResponseEntity<>(
+                bareSubjectService.deleteById(bareSubjectId),
+                HttpStatus.OK
         );
     }
 }

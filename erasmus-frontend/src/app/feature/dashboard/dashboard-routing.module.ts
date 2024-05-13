@@ -6,6 +6,8 @@ import {FacultyComponent} from "./faculty/faculty.component";
 import {HomeComponent} from "./home/home.component";
 import {AnnouncementsComponent} from "./announcements/announcements.component";
 import {AnnouncementComponent} from "./announcement/announcement.component";
+import {BareSubjectsComponent} from "./bare-subjects/bare-subjects.component";
+import {BareSubjectComponent} from "./bare-subject/bare-subject.component";
 
 export const routes: Routes = [
   {
@@ -13,8 +15,8 @@ export const routes: Routes = [
     component: HomeComponent
   },
   {
-      path: 'announcements',
-      component: AnnouncementsComponent
+    path: 'announcements',
+    component: AnnouncementsComponent
   },
   {
     path: 'announcement/:id',
@@ -27,6 +29,14 @@ export const routes: Routes = [
   {
     path: 'faculty/:id',
     component: FacultyComponent,
+  },
+  {
+    path: 'bare-subjects',
+    component: BareSubjectsComponent,
+  },
+  {
+    path: 'bare-subject/:id',
+    component: BareSubjectComponent,
   },
   {
     path: '**',

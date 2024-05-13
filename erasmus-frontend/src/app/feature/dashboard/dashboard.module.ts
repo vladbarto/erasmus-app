@@ -13,6 +13,16 @@ import { AnnouncementCardComponent } from './announcements/announcement-card/ann
 import { AddAnnouncementComponent } from './announcements/add-announcement/add-announcement.component';
 import { AnnouncementComponent } from './announcement/announcement.component';
 import { UpdateAnnouncementComponent } from './announcement/update-announcement/update-announcement.component';
+import { BareSubjectsComponent } from './bare-subjects/bare-subjects.component';
+import { BareSubjectCardComponent } from './bare-subjects/bare-subject-card/bare-subject-card.component';
+import { AddBareSubjectComponent } from './bare-subjects/add-bare-subject/add-bare-subject.component';
+import { BareSubjectComponent } from './bare-subject/bare-subject.component';
+import { UpdateBareSubjectComponent } from './bare-subject/update-bare-subject/update-bare-subject.component';
+// import { AddBareSubjectsComponent } from './bare-subjects/add-bare-subjects/add-bare-subjects.component';
+// import { BareSubjectCardComponent } from './bare-subjects/bare-subject-card/bare-subject-card.component';
+// import { AddBareSubjectComponent } from './bare-subjects/add-bare-subject/add-bare-subject.component';
+// import { BareSubjectComponent } from './bare-subject/bare-subject.component';
+// import { UpdateBareSubjectComponent } from './bare-subject/update-bare-subject/update-bare-subject.component';
 
 
 @NgModule({
@@ -27,7 +37,17 @@ import { UpdateAnnouncementComponent } from './announcement/update-announcement/
     AnnouncementCardComponent,
     AddAnnouncementComponent,
     AnnouncementComponent,
-    UpdateAnnouncementComponent
+    UpdateAnnouncementComponent,
+    BareSubjectsComponent,
+    BareSubjectCardComponent,
+    AddBareSubjectComponent,
+    BareSubjectComponent,
+    UpdateBareSubjectComponent,
+//     AddBareSubjectsComponent,
+//     BareSubjectCardComponent,
+//     AddBareSubjectComponent,
+//     BareSubjectComponent,
+//     UpdateBareSubjectComponent
   ],
   imports: [
     CommonModule,
