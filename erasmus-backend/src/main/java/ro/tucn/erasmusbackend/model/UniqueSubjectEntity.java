@@ -1,13 +1,12 @@
 package ro.tucn.erasmusbackend.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.UUID;
 
 @Entity
 @Table(name="UNIQUESUBJECT")
@@ -21,11 +20,14 @@ import lombok.Setter;
  */
 public class UniqueSubjectEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+
     @Column(name = "UNIVERSITYCODE")
     private String universityCode;
 
     @Column(name = "FACULTYCODE")
-    private int facultyCode;
+    private UUID facultyCode;
 
     @Column(name = "CAENSUBJECT")
     private int CAENSubject;

@@ -30,10 +30,10 @@ public class BareSubjectController {
     private final BareSubjectService bareSubjectService;
     
     /**
-     * method that gets Bare Subjects by CAEN Code (its ID)
+     * method that gets Bare Subjects by ID type UUID (its ID)
      */
     @GetMapping("/{id}")
-    @Operation(summary = "Gets Bare Subjects by CAEN Code", description = "Subject must exist")
+    @Operation(summary = "Gets Bare Subjects by own Id", description = "Subject must exist")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Bare Subject found",
                     content = {@Content(mediaType = "application/json", schema = @Schema(implementation = BareSubjectResponseDTO.class))}),

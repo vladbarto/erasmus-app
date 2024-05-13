@@ -15,6 +15,8 @@ public enum ExceptionCode {
 
     ERR001_ANNOUNCEMENT_NOT_FOUND("Announcement with ID %s not found"),
 
-    ERR001_BARESUBJECT_NOT_FOUND("Bare subject with ID %s not found");
+    ERR001_BARESUBJECT_NOT_FOUND("Bare subject with ID %s not found"),
+
+    ERR001_UNIQUESUBJECT_NOT_FOUND("Unique subject with ID %s not found");
     private final String message;
 }

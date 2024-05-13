@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 /**
  * Client's request to the server
  */
@@ -15,7 +17,8 @@ import lombok.Setter;
 public class UniqueSubjectRequestDTO {
 
     private String universityCode;
-    private int facultyCode;
+    private UUID facultyCode;
+    private int CAENSubject;
     private float ECTSCredits;
     private String name;
     private int subjectStudyYear;

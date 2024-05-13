@@ -2,8 +2,12 @@ package ro.tucn.erasmusbackend.service.uniqueSubject;
 
 import ro.tucn.erasmusbackend.dto.uniqueSubject.UniqueSubjectRequestDTO;
 import ro.tucn.erasmusbackend.dto.uniqueSubject.UniqueSubjectResponseDTO;
+import ro.tucn.erasmusbackend.dto.uniqueSubject.UniqueSubjectRequestDTO;
+import ro.tucn.erasmusbackend.dto.uniqueSubject.UniqueSubjectResponseDTO;
 
 import java.util.List;
+import java.util.UUID;
+
 /**
  * Service class that defines UniqueSubject CRUD operations
  * This includes:
@@ -24,4 +28,15 @@ public interface UniqueSubjectService {
      * @return object of type ResponseDTO containing all attributes of an UniqueSubject saved in DB
      */
     UniqueSubjectResponseDTO save(UniqueSubjectRequestDTO uniqueSubjectRequestDTO);
+
+    /**
+     * Method that returns details of a uniqueSubject
+     * @param uniqueSubjectId desired uniqueSubject id
+     * @return details of desired uniqueSubject
+     */
+    UniqueSubjectResponseDTO findById(UUID uniqueSubjectId);
+
+    UniqueSubjectResponseDTO update(UniqueSubjectRequestDTO uniqueSubjectRequestDTO, UUID uniqueSubjectId);
+
+    UniqueSubjectResponseDTO deleteById(UUID uniqueSubjectId);
 }

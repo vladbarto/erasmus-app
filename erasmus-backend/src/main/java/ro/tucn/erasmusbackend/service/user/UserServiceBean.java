@@ -3,10 +3,13 @@ package ro.tucn.erasmusbackend.service.user;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.transaction.annotation.Transactional;
+import ro.tucn.erasmusbackend.dto.user.UserRequestDTO;
 import ro.tucn.erasmusbackend.dto.user.UserResponseDTO;
 import ro.tucn.erasmusbackend.exception.ExceptionCode;
 import ro.tucn.erasmusbackend.exception.NotFoundException;
 import ro.tucn.erasmusbackend.mapper.UserMapper;
+import ro.tucn.erasmusbackend.model.UserEntity;
 import ro.tucn.erasmusbackend.repository.UserRepository;
 
 @Slf4j
@@ -24,5 +27,14 @@ public class UserServiceBean implements UserService {
                         ExceptionCode.ERR002_USERNAME_NOT_FOUND.getMessage(),
                         username
                 )));
+    }
+
+    @Override
+    @Transactional
+    public UserResponseDTO save(UserRequestDTO userRequestDTO) {
+        UserEntity userToBeAdded = userMapper.userRequestDTOToUserEntity(userRequestDTO);
+        UserEntity userAdded = userRepository.save(userToBeAdded);
+
+        return userMapper.userEntityToUserResponseDTO(userAdded);
     }
 }

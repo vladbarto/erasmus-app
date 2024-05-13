@@ -2,6 +2,7 @@ package ro.tucn.erasmusbackend.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
+import ro.tucn.erasmusbackend.dto.user.UserRequestDTO;
 import ro.tucn.erasmusbackend.dto.user.UserResponseDTO;
 import ro.tucn.erasmusbackend.model.UserEntity;
 
@@ -9,4 +10,6 @@ import ro.tucn.erasmusbackend.model.UserEntity;
 public interface UserMapper {
 
     UserResponseDTO userEntityToUserResponseDTO(UserEntity userEntity);
+
+    UserEntity userRequestDTOToUserEntity(UserRequestDTO userRequestDTO);
 }
