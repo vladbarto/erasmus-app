@@ -1,0 +1,27 @@
+<div class="fundal">
+  <div class="container pt-5 d-flex flex-column align-items-center bg-transparent">
+    <app-add-announcement (onAddAnnouncement)="addAnnouncement($event)"></app-add-announcement>
+    <h3>Announcements</h3>
+
+    <div class="mb-3 d-flex flex-row">
+      <div class="mb-3 d-flex flex-column">
+        <div class="mb-3 d-flex flex-row">
+          <!--button (click)="searchAll()" class="btn btn-info">
+            <i class="fa fa-magnifying-glass"></i>
+          </button>
+          <button (click)="logOut()" class="btn btn-danger">
+            <i class="fa fa-right-from-bracket"></i>
+          </button-->
+        </div>
+
+        <div class="p-2 d-flex flex-row">
+          @for (announcement of announcements; track announcement.announcementId) {
+          <app-announcement-card [announcement]="announcement" (deleteAnnouncement)="deleteAnnouncementCalled($event)"></app-announcement-card>
+          } @empty {
+          <p>No announcement</p>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+.cutoff-text {
+  --max-lines: 1;
+  display: -webkit-box;
+  overflow: hidden;
+}

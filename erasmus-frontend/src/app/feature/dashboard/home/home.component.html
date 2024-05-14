@@ -1,0 +1,59 @@
+<nav class="navbar navbar-default header-custom">
+  <div class="container-fluid">
+    <div class="navbar-header d-flex flex-row">
+      <a class="navbar-brand" href="dashboard/**">
+        <p>Erasmus App</p>
+        <img src="../../../../assets/eutPlus.svg">
+      </a>
+      <button (click)="logOut()" class="btn btn-primary bg-danger ms-2">
+        <i class="fa fa-right-from-bracket"></i>
+      </button>
+    </div>
+
+    <ul class="nav navbar-nav d-inline-flex flex-row">
+      <li class="nav-item active bg-info text-light p-2 rounded hover-overlay">
+        <a href="dashboard/faculties" class="nav-link bg-light-hover">
+          Faculties
+        </a>
+      </li>
+
+      <li class="nav-item active bg-info m-2 p-2 rounded">
+        <a href="dashboard/universities" class="nav-link">
+          Universities
+        </a>
+      </li>
+
+      <li class="nav-item active bg-info m-2 p-2 rounded">
+        <a href="dashboard/announcements" class="nav-link">
+          Announcements
+        </a>
+      </li>
+
+      <li class="nav-item active bg-info m-2 p-2 rounded">
+        <a href="dashboard/bare-subjects" class="nav-link">
+          Bare Subjects
+        </a>
+      </li>
+
+      <li class="nav-item active bg-info m-2 p-2 rounded">
+        <a href="dashboard/unique-subjects" class="nav-link">
+          Unique Subjects
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="fundal p-5 text-white">
+  <h3>content</h3>
+<!--  Todo: bring announcements to main page-->
+<!--  <div class="container-sm ml-0 bg-info text-dark">-->
+<!--    <div class="p-2 d-flex flex-row">-->
+<!--      @for (announcement of announcements; track announcement.announcementId) {-->
+<!--      <app-announcement-card [announcement]="announcement" (deleteAnnouncement)="deleteAnnouncementCalled($event)"></app-announcement-card>-->
+<!--      } @empty {-->
+<!--      <p>No announcement</p>-->
+<!--      }-->
+<!--    </div>-->
+<!--  </div>-->
+</div>
+

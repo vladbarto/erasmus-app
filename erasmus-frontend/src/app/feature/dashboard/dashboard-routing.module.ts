@@ -8,6 +8,8 @@ import {AnnouncementsComponent} from "./announcements/announcements.component";
 import {AnnouncementComponent} from "./announcement/announcement.component";
 import {BareSubjectsComponent} from "./bare-subjects/bare-subjects.component";
 import {BareSubjectComponent} from "./bare-subject/bare-subject.component";
+import {UniqueSubjectsComponent} from "./unique-subjects/unique-subjects.component";
+import {UniqueSubjectComponent} from "./unique-subject/unique-subject.component";
 
 export const routes: Routes = [
   {
@@ -20,7 +22,7 @@ export const routes: Routes = [
   },
   {
     path: 'announcement/:id',
-    component: AnnouncementComponent,
+    component: AnnouncementComponent
   },
   {
     path: 'faculties',
@@ -28,15 +30,23 @@ export const routes: Routes = [
   },
   {
     path: 'faculty/:id',
-    component: FacultyComponent,
+    component: FacultyComponent
   },
   {
     path: 'bare-subjects',
-    component: BareSubjectsComponent,
+    component: BareSubjectsComponent
   },
   {
     path: 'bare-subject/:id',
-    component: BareSubjectComponent,
+    component: BareSubjectComponent
+  },
+  {
+    path: 'unique-subjects',
+    component: UniqueSubjectsComponent
+  },
+  {
+    path: 'unique-subject/:id',
+    component: UniqueSubjectComponent
   },
   {
     path: '**',

@@ -1,0 +1,32 @@
+<div class="container mt-5 d-flex align-items-center justify-content-center">
+  <h3>Bare Subject's details</h3>
+  <div class="card shadow-lg p-2 m-5">
+    <div class="d-flex flex-row">
+      <div class="m-2">
+        <i class="fa fa-user fa-2x"></i>
+      </div>
+      <div class="d-flex flex-column me-auto">
+        <!--span>Rating: {{chef?.numberOfStars}}/5</span-->
+        <div>
+          <span>Id bare Subject: </span>
+          <span class="fw-bold">{{bareSubject?.id}}</span>
+        </div>
+        <div>
+          <span>CAEN Code Subject: </span>
+          <span class="fw-bold">{{bareSubject?.CAENSubject}}</span>
+        </div>
+        <div>
+          <span>Composite Key: </span>
+          <span class="fw-bold">{{ bareSubject?.compositeKey }}</span>
+        </div>
+        <div>
+          <span>Description: </span>
+          <span class="fw-bold">{{ bareSubject?.description }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-update-bare-subject (onUpdateBareSubject)="updateBareSubject($event)"></app-update-bare-subject>
+</div>
+
+

@@ -18,12 +18,11 @@ import { BareSubjectCardComponent } from './bare-subjects/bare-subject-card/bare
 import { AddBareSubjectComponent } from './bare-subjects/add-bare-subject/add-bare-subject.component';
 import { BareSubjectComponent } from './bare-subject/bare-subject.component';
 import { UpdateBareSubjectComponent } from './bare-subject/update-bare-subject/update-bare-subject.component';
-// import { AddBareSubjectsComponent } from './bare-subjects/add-bare-subjects/add-bare-subjects.component';
-// import { BareSubjectCardComponent } from './bare-subjects/bare-subject-card/bare-subject-card.component';
-// import { AddBareSubjectComponent } from './bare-subjects/add-bare-subject/add-bare-subject.component';
-// import { BareSubjectComponent } from './bare-subject/bare-subject.component';
-// import { UpdateBareSubjectComponent } from './bare-subject/update-bare-subject/update-bare-subject.component';
-
+import { UniqueSubjectsComponent } from './unique-subjects/unique-subjects.component';
+import { UniqueSubjectCardComponent } from './unique-subjects/unique-subject-card/unique-subject-card.component';
+import { AddUniqueSubjectComponent } from './unique-subjects/add-unique-subject/add-unique-subject.component';
+import { UniqueSubjectComponent } from './unique-subject/unique-subject.component';
+import { UpdateUniqueSubjectComponent } from './unique-subject/update-unique-subject/update-unique-subject.component';
 
 @NgModule({
   declarations: [
@@ -43,11 +42,11 @@ import { UpdateBareSubjectComponent } from './bare-subject/update-bare-subject/u
     AddBareSubjectComponent,
     BareSubjectComponent,
     UpdateBareSubjectComponent,
-//     AddBareSubjectsComponent,
-//     BareSubjectCardComponent,
-//     AddBareSubjectComponent,
-//     BareSubjectComponent,
-//     UpdateBareSubjectComponent
+    UniqueSubjectsComponent,
+    UniqueSubjectCardComponent,
+    AddUniqueSubjectComponent,
+    UniqueSubjectComponent,
+    UpdateUniqueSubjectComponent,
   ],
   imports: [
     CommonModule,

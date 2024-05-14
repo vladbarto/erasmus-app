@@ -1,0 +1,24 @@
+<div class="card shadow-lg p-2 m-2">
+  <div class="d-flex flex-row">
+    <div class="m-2">
+      <i class="fa fa-user fa-2x"></i>
+    </div>
+    <div class="d-flex flex-column me-auto">
+<!--      <span class="fw-bold">Id: {{ bareSubject.id ? bareSubject.id : 'N/A' }}</span>-->
+      <span class="fw-bold">BareSubject Description: {{ bareSubject.description }}</span>
+      <!--
+      <span>University Code: {{ bareSubject.universityCode }}</span>
+      <span>Description: {{ bareSubject.description }}</span>
+      <span>Composite Key: {{ bareSubject.compositeKey }}</span>
+-->
+    </div>
+    <div>
+      <button (click)="viewDetails(bareSubject.id!)" class="btn btn-primary">
+        <i class="fa fa-magnifying-glass"></i>
+      </button>
+      <button (click)="deleteBareSubjectPressed(bareSubject.id || '')" class="btn btn-danger">
+        <i class="fa fa-trash"></i>
+      </button>
+    </div>
+  </div>
+</div>

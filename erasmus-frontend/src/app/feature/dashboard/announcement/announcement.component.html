@@ -1,0 +1,34 @@
+<div class="container mt-5 d-flex align-items-center justify-content-center">
+  <h3>Announcement's details</h3>
+  <div class="card shadow-lg p-2 m-5">
+    <div class="d-flex flex-row">
+      <div class="m-2">
+        <i class="fa fa-user fa-2x"></i>
+      </div>
+      <div class="d-flex flex-column me-auto">
+        <span class="fw-bold">{{announcement?.title}}</span>
+        <!--span>Rating: {{chef?.numberOfStars}}/5</span-->
+        <div>
+          <span>Id facultate: </span>
+          <span class="fw-bold">{{announcement?.announcementId}}</span>
+        </div>
+        <div>
+          <span>University Code: </span>
+          <span class="fw-bold">{{ announcement?.universityCode }}</span>
+        </div>
+        <div>
+          <span>Description: </span>
+          <span class="fw-bold">{{ announcement?.description }}</span>
+        </div>
+        <div>
+          <span>Composite Key: </span>
+          <span class="fw-bold">{{ announcement?.representativeId }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-update-announcement (onUpdateAnnouncement)="updateAnnouncement($event)"></app-update-announcement>
+</div>
+
+
+

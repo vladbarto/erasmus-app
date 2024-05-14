@@ -1,0 +1,21 @@
+<div class="fundal">
+  <div class="container pt-5 d-flex flex-column align-items-center">
+    <!--  <app-add-unique-subject (onAddUniqueSubject)="addUniqueSubject($event)"></app-add-unique-subject>-->
+    <app-add-unique-subject></app-add-unique-subject>
+    <h3>Unique Subjects</h3>
+
+    <div class="mb-3 d-flex flex-row">
+      <div class="mb-3 d-flex flex-column">
+        <div class="p-2">
+          @for (uniqueSubject of uniqueSubjects; track uniqueSubject.id) {
+          <app-unique-subject-card [uniqueSubject]="uniqueSubject" (deleteUniqueSubject)="deleteUniqueSubjectCalled($event)"></app-unique-subject-card>
+          } @empty {
+          <p>No unique subject</p>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+

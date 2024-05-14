@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { requestInterceptor } from './core/http-interceptor/request-interceptor';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { requestInterceptor } from './core/http-interceptor/request-interceptor'
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [
     provideHttpClient(withInterceptors([ requestInterceptor ]))

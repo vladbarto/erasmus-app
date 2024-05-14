@@ -1,0 +1,13 @@
+<div class="card m-2" style="width: 18rem;">
+  <img class="card-img-top" src="../../../../../assets/eut+image.png" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{announcement.title}}</h5>
+    <p class="card-text cutoff-text">{{announcement.description}}</p>
+    <button (click)="viewDetails(announcement.announcementId!)" class="btn btn-primary me-1">
+      <i class="fa fa-magnifying-glass"></i>
+    </button>
+    <button (click)="deleteAnnouncementPressed(announcement.announcementId || '')" class="btn btn-danger ms-1">
+      <i class="fa fa-trash"></i>
+    </button>
+  </div>
+</div>

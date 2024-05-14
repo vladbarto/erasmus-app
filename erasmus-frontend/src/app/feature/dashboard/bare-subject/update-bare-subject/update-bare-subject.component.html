@@ -1,0 +1,42 @@
+<div class="ml-10" style="width: 500px;">
+  <div class="container d-flex justify-content-center flex-column mt-5">
+    <h3>Update BareSubject Area</h3>
+    <div class="card shadow-lg p-2">
+      <form (ngSubmit)="onSubmit()" [formGroup]="updateBareSubjectForm">
+        <div class="form-control">
+          <label class="form-label" for="CAENSubject">CAEN Subject</label>
+          <input class="form-control"
+                 type="number"
+                 name="CAENSubject"
+                 id="CAENSubject"
+                 formControlName="CAENSubject"
+          >
+        </div>
+        <div class="form-control">
+          <label class="form-label" for="compositeKey">Composite Key</label>
+          <input class="form-control"
+                 type="text"
+                 name="compositeKey"
+                 id="compositeKey"
+                 formControlName="compositeKey"
+          >
+        </div>
+        <div class="form-control">
+          <label class="form-label" for="description">Description</label>
+          <textarea class="form-control"
+                    name="description"
+                    formControlName="description"
+                    id="description"
+                    rows="2"
+                    placeholder="A nice fat description"
+          ></textarea>
+        </div>
+        <button class="mt-3 btn btn-success">Add</button>
+      </form>
+
+
+    </div>
+  </div>
+
+</div>
+

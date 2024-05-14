@@ -1,0 +1,25 @@
+<div class="container pt-5 d-flex flex-column align-items-center bg-light">
+  <app-add-bare-subject (onAddBareSubject)="addBareSubject($event)"></app-add-bare-subject>
+  <h3>Bare Subjects</h3>
+
+  <div class="mb-3 d-flex flex-row">
+    <div class="mb-3 d-flex flex-column">
+      <div class="mb-3 d-flex flex-row">
+        <!--button (click)="searchAll()" class="btn btn-info">
+          <i class="fa fa-magnifying-glass"></i>
+        </button>
+        <button (click)="logOut()" class="btn btn-danger">
+          <i class="fa fa-right-from-bracket"></i>
+        </button-->
+      </div>
+
+      <div class="p-2">
+        @for (bareSubject of bareSubjects; track bareSubject.id) {
+        <app-bare-subject-card [bareSubject]="bareSubject" (deleteBareSubject)="deleteBareSubjectCalled($event)"></app-bare-subject-card>
+        } @empty {
+        <p>No bare subject</p>
+        }
+      </div>
+    </div>
+  </div>
+</div>
