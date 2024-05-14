@@ -59,9 +59,9 @@ public class UniqueSubjectServiceBean implements UniqueSubjectService {
                     uniqueSubjectEntity.setName(uniqueSubjectRequestDTO.getName());
                     uniqueSubjectEntity.setCAENSubject(uniqueSubjectRequestDTO.getCAENSubject());
                     uniqueSubjectEntity.setSubjectStudyYear(uniqueSubjectRequestDTO.getSubjectStudyYear());
-                    uniqueSubjectEntity.setECTSCredits(uniqueSubjectEntity.getECTSCredits());
-                    uniqueSubjectEntity.setFacultyCode(uniqueSubjectEntity.getFacultyCode());
-                    uniqueSubjectEntity.setUniversityCode(uniqueSubjectEntity.getUniversityCode());
+                    uniqueSubjectEntity.setECTSCredits(uniqueSubjectRequestDTO.getECTSCredits());
+                    uniqueSubjectEntity.setFacultyCode(uniqueSubjectRequestDTO.getFacultyCode());
+                    uniqueSubjectEntity.setUniversityCode(uniqueSubjectRequestDTO.getUniversityCode());
 
                     uniqueSubjectRepository.save(uniqueSubjectEntity);
 

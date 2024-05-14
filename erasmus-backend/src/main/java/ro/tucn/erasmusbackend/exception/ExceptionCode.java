@@ -17,6 +17,12 @@ public enum ExceptionCode {
 
     ERR001_BARESUBJECT_NOT_FOUND("Bare subject with ID %s not found"),
 
-    ERR001_UNIQUESUBJECT_NOT_FOUND("Unique subject with ID %s not found");
+    ERR001_UNIQUESUBJECT_NOT_FOUND("Unique subject with ID %s not found"),
+
+    ERR001_PERSON_NOT_FOUND("Person with ID %s not found"),
+
+    ERR001_REPRESENTATIVE_NOT_FOUND("Representative with ID %s not found"),
+
+    ERR001_SECRETARY_NOT_FOUND("Secretary with ID %s not found");
     private final String message;
 }

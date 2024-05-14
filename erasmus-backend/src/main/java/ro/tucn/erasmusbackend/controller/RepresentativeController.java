@@ -15,6 +15,7 @@ import ro.tucn.erasmusbackend.dto.representative.RepresentativeResponseDTO;
 import ro.tucn.erasmusbackend.exception.ExceptionBody;
 import ro.tucn.erasmusbackend.service.representative.RepresentativeService;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Manages interaction between client and server
@@ -54,7 +55,7 @@ public class RepresentativeController {
      * @param representativeRequestDTO - data of representative to be saved
      * @return the data to be saved and a http status
      */
-    @PostMapping("/save-one")
+    @PostMapping("/one")
     @Operation(summary = "Save one representative")
     @ApiResponse(responseCode = "201", description = "Representative successfully created",
             content = {@Content(mediaType = "application/json", schema = @Schema(implementation = RepresentativeResponseDTO.class))})
@@ -67,4 +68,51 @@ public class RepresentativeController {
                 HttpStatus.CREATED
         );
     }
+
+    /**
+     * method that gets Unique Subjects by ID type UUID (its ID)
+     */
+    @GetMapping("/{id}")
+    @Operation(summary = "Gets Unique Subjects by CAEN Code", description = "Subject must exist")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Unique Subject found",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = RepresentativeResponseDTO.class))}),
+            @ApiResponse(responseCode = "404", description = "Unique Subject not found",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))}),
+            @ApiResponse(responseCode = "500", description = "Internal server error",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))})
+    })
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+    public ResponseEntity<RepresentativeResponseDTO> findById(@PathVariable("id") UUID personId) {
+        return new ResponseEntity<>(
+                representativeService.findById(personId),
+                HttpStatus.OK
+        );
+    }
+
+//    @PutMapping("/{id}")
+//    @Operation(summary = "Update one representative")
+//    @ApiResponse(responseCode = "301", description = "Representative successfully updated",
+//            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = RepresentativeResponseDTO.class))})
+//    @PreAuthorize("hasRole('ADMIN')")
+//    public ResponseEntity<RepresentativeResponseDTO> updateRepresentative(
+//            @RequestBody RepresentativeRequestDTO representativeRequestDTO, @PathVariable("id") UUID representativeId
+//    ) {
+//        return new ResponseEntity<>(
+//                representativeService.update(representativeRequestDTO, representativeId),
+//                HttpStatus.OK
+//        );
+//    }
+//
+//    @DeleteMapping("/{id}")
+//    @Operation(summary = "Delete one representative")
+//    @ApiResponse(responseCode = "301", description = "Representative successfully deleted",
+//            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = RepresentativeResponseDTO.class))})
+//    @PreAuthorize("hasRole('ADMIN')")
+//    public ResponseEntity<RepresentativeResponseDTO> deleteById(@PathVariable("id") UUID representativeId) {
+//        return new ResponseEntity<>(
+//                representativeService.deleteById(representativeId),
+//                HttpStatus.OK
+//        );
+//    }
 }

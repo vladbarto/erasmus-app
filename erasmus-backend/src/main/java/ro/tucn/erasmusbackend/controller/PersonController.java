@@ -16,6 +16,7 @@ import ro.tucn.erasmusbackend.exception.ExceptionBody;
 import ro.tucn.erasmusbackend.service.person.PersonService;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Manages interaction between client and server
@@ -68,6 +69,52 @@ public class PersonController {
         );
     }
 
+    /**
+     * method that gets Unique Subjects by ID type UUID (its ID)
+     */
+    @GetMapping("/{id}")
+    @Operation(summary = "Gets Unique Subjects by CAEN Code", description = "Subject must exist")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Unique Subject found",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = PersonResponseDTO.class))}),
+            @ApiResponse(responseCode = "404", description = "Unique Subject not found",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))}),
+            @ApiResponse(responseCode = "500", description = "Internal server error",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionBody.class))})
+    })
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+    public ResponseEntity<PersonResponseDTO> findById(@PathVariable("id") UUID personId) {
+        return new ResponseEntity<>(
+                personService.findById(personId),
+                HttpStatus.OK
+        );
+    }
+
+    @PutMapping("/{id}")
+    @Operation(summary = "Update one person")
+    @ApiResponse(responseCode = "301", description = "Person successfully updated",
+            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = PersonResponseDTO.class))})
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<PersonResponseDTO> updatePerson(
+            @RequestBody PersonRequestDTO personRequestDTO, @PathVariable("id") UUID personId
+    ) {
+        return new ResponseEntity<>(
+                personService.update(personRequestDTO, personId),
+                HttpStatus.OK
+        );
+    }
+
+    @DeleteMapping("/{id}")
+    @Operation(summary = "Delete one person")
+    @ApiResponse(responseCode = "301", description = "Person successfully deleted",
+            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = PersonResponseDTO.class))})
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<PersonResponseDTO> deleteById(@PathVariable("id") UUID personId) {
+        return new ResponseEntity<>(
+                personService.deleteById(personId),
+                HttpStatus.OK
+        );
+    }
 //    @DeleteMapping("/{name}")
 //    @Operation(summary = "Delete one Person")
 //    @ApiResponses(value = {

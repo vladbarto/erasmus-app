@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.UUID;
 import java.util.Date;
@@ -45,6 +46,7 @@ public class PersonEntity {
     private String phoneNumber;
 
     @Column(name = "DATEOFBIRTH")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
 
     @Column(name = "UNIVERSITYCODE")

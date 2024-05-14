@@ -53,7 +53,7 @@ public class StudentController {
      * @param studentRequestDTO - data of student to be saved
      * @return the data to be saved and  a http status
      */
-    @PostMapping("/save-one")
+    @PostMapping("/one")
     @Operation(summary = "Save one student")
     @ApiResponse(responseCode = "201", description = "Student successfully created",
             content = {@Content(mediaType = "application/json", schema = @Schema(implementation = StudentResponseDTO.class))})
@@ -66,4 +66,6 @@ public class StudentController {
                 HttpStatus.CREATED
         );
     }
+
+
 }

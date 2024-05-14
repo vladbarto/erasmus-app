@@ -3,13 +3,16 @@ package ro.tucn.erasmusbackend.service.representative;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.transaction.annotation.Transactional;
-import ro.tucn.erasmusbackend.dto.representative.RepresentativeRequestDTO;
 import ro.tucn.erasmusbackend.dto.representative.RepresentativeResponseDTO;
+import ro.tucn.erasmusbackend.dto.representative.RepresentativeRequestDTO;
+import ro.tucn.erasmusbackend.exception.ExceptionCode;
+import ro.tucn.erasmusbackend.exception.NotFoundException;
 import ro.tucn.erasmusbackend.mapper.RepresentativeMapper;
 import ro.tucn.erasmusbackend.model.RepresentativeEntity;
 import ro.tucn.erasmusbackend.repository.RepresentativeRepository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -36,5 +39,15 @@ public class RepresentativeServiceBean implements RepresentativeService{
         RepresentativeEntity representativeAdded = representativeRepository.save(representativeToBeAdded);
 
         return representativeMapper.representativeEntityToRepresentativeResponseDTO(representativeAdded);
+    }
+
+    @Override
+    public RepresentativeResponseDTO findById(UUID personId) {
+        return representativeRepository.findById(personId)
+                .map(representativeMapper::representativeEntityToRepresentativeResponseDTO)
+                .orElseThrow(() -> new NotFoundException(String.format(
+                        ExceptionCode.ERR001_REPRESENTATIVE_NOT_FOUND.getMessage(),
+                        personId
+                )));
     }
 }

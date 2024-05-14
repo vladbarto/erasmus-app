@@ -4,6 +4,8 @@ import ro.tucn.erasmusbackend.dto.representative.RepresentativeRequestDTO;
 import ro.tucn.erasmusbackend.dto.representative.RepresentativeResponseDTO;
 
 import java.util.List;
+import java.util.UUID;
+
 /**
  * Service class that defines Representative CRUD operations
  * This includes:
@@ -23,4 +25,15 @@ public interface RepresentativeService {
      * @return object of type ResponseDTO containing all attributes of a Representative saved in DB
      */
     RepresentativeResponseDTO save(RepresentativeRequestDTO representativeRequestDTO);
+
+    /**
+     * Method that returns details of a representative
+     * @param personId desired representative id
+     * @return details of desired representative
+     */
+    RepresentativeResponseDTO findById(UUID personId);
+
+    /*RepresentativeResponseDTO update(RepresentativeRequestDTO representativeRequestDTO, UUID representativeId);
+
+    RepresentativeResponseDTO deleteById(UUID representativeId);*/
 }
