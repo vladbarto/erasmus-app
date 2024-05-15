@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../../core/service/auth/auth.service';
 import { UserService } from '../../../core/service/user/user.service';
 import { UserModel } from '../../../shared/models/user.model';
+import { DetailsService } from '../../../core/service/details/details.service';
 
 @Component({
   selector: 'app-register',
@@ -20,6 +21,7 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private userService: UserService,
+    private detailsService: DetailsService,
     private router: Router,
     private destroyRef: DestroyRef
   ) {
@@ -42,13 +44,11 @@ export class RegisterComponent implements OnInit {
       password: this.registerForm?.get('password2')?.value,
       role: this.registerForm?.get('role')?.value
     };
-    this.userService.register(credentials)
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe({
-        error: () => this.errorMessage = 'Invalid credentials'
-      });
 
-    this.router.navigateByUrl('auth/register/all-done');
+// localStorage.setItem(JSON.stringify(credentials));
+    this.detailsService.sendUserForm(credentials); // todo: to be commented out
+
+    this.router.navigateByUrl('auth/register/details');
   }
 
   private buildRegisterForm(): void {

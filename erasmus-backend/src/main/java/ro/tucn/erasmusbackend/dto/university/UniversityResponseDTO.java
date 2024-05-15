@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Server's response to the client
@@ -20,5 +21,4 @@ public class UniversityResponseDTO {
     private String name; // TODO: add this to documentation
     private String city;
     private String country;
-    private List<Integer> facultyCodes;
 }

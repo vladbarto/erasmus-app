@@ -1,0 +1,227 @@
+<div class="fundal">
+  <div>
+    <p>x</p>
+  </div>
+  <div class="container mt-5">
+    <h2 class="text-white">Registration Page</h2>
+    <!-- Student Form -->
+    <div *ngIf="showStudentForm">
+      <h3 class="text-white">Student Form</h3>
+      <!-- Your student form HTML here -->
+      <p class="text-white">sunt student, scoate-ma de aici!!!</p>
+      <div class="container d-flex justify-content-center">
+        <div class="card shadow-lg w-50 p-2">
+          <form (ngSubmit)="onUserSubmit()" [formGroup]="addUserForm">
+            <div class="form-control">
+              <label class="form-label" for="cnp">CNP</label>
+              <input class="form-control"
+                     type="text"
+                     formControlName="cnp"
+                     id="cnp"
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="name">Name</label>
+              <input class="form-control"
+                     type="text"
+                     formControlName="name"
+                     id="name"
+                     placeholder="your name and forename goes here"
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="phone">Phone number</label>
+              <input class="form-control"
+                     type="text"
+                     formControlName="phoneNumber"
+                     id="phone"
+                     placeholder="07... or +407..."
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="date">Date of Birth</label>
+              <input class="form-control"
+                     type="date"
+                     formControlName="dateOfBirth"
+                     id="date"
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="universityCode">University Code</label>
+              <input class="form-control"
+                     type="text"
+                     name="universityCode"
+                     id="universityCode"
+                     formControlName="universityCode"
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="faculty code">Faculty Code</label>
+              <input class="form-control"
+                     type="text"
+                     name="faculty code"
+                     id="faculty code"
+                     formControlName="facultyCode"
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="country">Country</label>
+              <input class="form-control"
+                     type="text"
+                     name="country"
+                     id="country"
+                     formControlName="country"
+                     placeholder="Romania"
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="city">City</label>
+              <input class="form-control"
+                     type="text"
+                     name="city"
+                     id="city"
+                     formControlName="city"
+                     placeholder="Cluj-Napoca"
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="MatriculationNumber">Matriculation Number</label>
+              <input class="form-control"
+                     type="number"
+                     formControlName="matriculationNumber"
+                     id="MatriculationNumber"
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="year of study">Year of Study</label>
+              <input class="form-control"
+                     type="number"
+                     formControlName="yearOfStudy"
+                     id="year of study"
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="gpa">GPA (Average grade)</label>
+              <input class="form-control"
+                     type="number"
+                     formControlName="gpa"
+                     id="gpa"
+              >
+            </div>
+            <div data-mdb-input-init class="form-outline mb-4">
+              <label class="form-label">Do you have a language certificate</label>
+              <select name="role" id="language" class="form-control" formControlName="hasLanguageCertificate">
+                <option value="true">true</option>
+                <option value="false">false</option>
+              </select>
+            </div>
+            <div data-mdb-input-init class="form-outline mb-4">
+              <label class="form-label">Do you have exams to retake</label>
+              <select name="role" id="restante" class="form-control" formControlName="hasReexaminations">
+                <option value="true">true</option>
+                <option value="false">false</option>
+              </select>
+            </div>
+            <button class="mt-3 btn btn-success">register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Representative Form -->
+    <div *ngIf="showRepresentativeForm">
+      <h3>Representative Form</h3>
+      <!-- Your representative form HTML here -->
+      <p class="text-white">sunt reprezentant al universitatii, scoate-ma de aici!!!</p>
+      <div class="container d-flex justify-content-center">
+        <div class="card shadow-lg w-50 p-2">
+          <form (ngSubmit)="onUserSubmit()" [formGroup]="addUserForm">
+            <div class="form-control">
+              <label class="form-label" for="cnp">CNP</label>
+              <input class="form-control"
+                     type="text"
+                     formControlName="cnp"
+                     id="cnp2"
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="name">Name</label>
+              <input class="form-control"
+                     type="text"
+                     formControlName="name"
+                     id="name2"
+                     placeholder="your name and forename goes here"
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="phone">Phone number</label>
+              <input class="form-control"
+                     type="text"
+                     formControlName="phoneNumber"
+                     id="phone2"
+                     placeholder="07... or +407..."
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="date">Date of Birth</label>
+              <input class="form-control"
+                     type="date"
+                     formControlName="dateOfBirth"
+                     id="date2"
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="universityCode">University Code</label>
+              <input class="form-control"
+                     type="text"
+                     name="universityCode"
+                     id="universityCode2"
+                     formControlName="universityCode"
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="faculty code">Faculty Code</label>
+              <input class="form-control"
+                     type="text"
+                     name="faculty code"
+                     id="faculty code2"
+                     formControlName="facultyCode"
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="country">Country</label>
+              <input class="form-control"
+                     type="text"
+                     name="country"
+                     id="country2"
+                     formControlName="country"
+                     placeholder="Romania"
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="city">City</label>
+              <input class="form-control"
+                     type="text"
+                     name="city"
+                     id="city2"
+                     formControlName="city"
+                     placeholder="Cluj-Napoca"
+              >
+            </div>
+            <div class="form-control">
+              <label class="form-label" for="city">City</label>
+              <input class="form-control"
+                     type="text"
+                     name="titles"
+                     id="titles"
+                     formControlName="titles"
+                     placeholder="Prof. Dr."
+              >
+            </div>
+            <button class="mt-3 btn btn-success">register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

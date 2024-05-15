@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.util.UUID;
 
 import java.util.List;
 @Entity
@@ -29,8 +30,4 @@ public class UniversityEntity {
 
     @Column(name = "COUNTRY")
     private String country;
-
-    @Column(name = "FACULTYCODES")
-    @ElementCollection
-    private List<Integer> facultyCodes;
 }

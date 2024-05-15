@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
+import {DetailsComponent} from "./register/details/details.component";
 import {AllDoneComponent} from "./register/all-done/all-done.component";
 import {NotFoundComponent} from "../../shared/components/not-found/not-found.component";
 
@@ -13,6 +14,10 @@ export const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'register/details',
+    component: DetailsComponent
   },
   {
     path: 'register/all-done',

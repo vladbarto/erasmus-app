@@ -23,6 +23,9 @@ public enum ExceptionCode {
 
     ERR001_REPRESENTATIVE_NOT_FOUND("Representative with ID %s not found"),
 
-    ERR001_SECRETARY_NOT_FOUND("Secretary with ID %s not found");
+    ERR001_SECRETARY_NOT_FOUND("Secretary with ID %s not found"),
+
+    ERR001_UNIVERSITY_NOT_FOUND("University with ID %s not found"),
+    ERR002_UNIVERSITYCODE_NOT_FOUND("University %s not found");
     private final String message;
 }

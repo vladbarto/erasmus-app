@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ro.tucn.erasmusbackend.model.UserEntity;
 
 import java.util.Date;
 import java.util.UUID;
@@ -17,6 +18,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class PersonRequestDTO {
 
+    private UUID userId;
     private String CNP;
     private String name;
     private String phoneNumber;

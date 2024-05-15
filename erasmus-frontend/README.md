@@ -1,27 +1,63 @@
 # ErasmusFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
+## Authentication
+During an authentication process one can:
+- login
+- register as new user and person respectively
 
-## Development server
+Login page:
+![LoginPage](./README_MEDIA/loginPage.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+New User Registration:
+![Register](./README_MEDIA/register.png)
 
-## Code scaffolding
+New Representative Registration:
+![Representative](./README_MEDIA/representative.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+New Student Registration:
+![Student](./README_MEDIA/student.png)
 
-## Build
+Confirmation page:
+![Auto-Redirect](./README_MEDIA/redirect.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Not Found
+In case of anything, there is a not found page.
+The link with *Întoarce-te la start* actually works!
+![NotFound](./README_MEDIA/notFound.png)
 
-## Running unit tests
+## Dashboard
+Everything starts on a home page:
+![home](./README_MEDIA/home.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+with buttons that will redirect you to each corresponding "Entity" page.
 
-## Running end-to-end tests
+### Faculty
+Faculties:
+![faculties](./README_MEDIA/faculties.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+One Faculty's Details:
+![faculty](./README_MEDIA/faculty.png)
 
-## Further help
+### Announcements
+(My pride when it comes to design)
+Announcements:
+![announcements](./README_MEDIA/announcements.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+One Announcement:
+![announcement](./README_MEDIA/announcement.png)
+
+### Bare Subject
+Bare subjects:
+![baresubjects](./README_MEDIA/baresubjects.png)
+
+One Bare Subject:
+![baresubject](./README_MEDIA/baresubject.png)
+
+### Unique Subject
+Unique subjects:
+![uniquesubs](./README_MEDIA/uniquesubs.png)
+
+UniqueSubject:
+![uniquesub](./README_MEDIA/uniquesub.png)
+
+

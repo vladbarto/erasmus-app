@@ -2,3 +2,7 @@
   background: rgb(38,33,120);
   background: linear-gradient(90deg, rgba(38,33,120,1) 0%, rgba(114,9,121,1) 35%, rgba(85,0,255,1) 100%);
 }
+
+.form-control {
+  margin: 5pt;
+}

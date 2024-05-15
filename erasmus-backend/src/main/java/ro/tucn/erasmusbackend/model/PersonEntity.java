@@ -5,8 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.type.SqlTypes;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.UUID;
@@ -21,12 +19,12 @@ import java.util.Date;
 @AllArgsConstructor
 /**
  * Current class defines how a person should look like.
- * Here things brecome interesting, because person is to be inherited by Student and Representative.
+ * Here things become interesting, because person is to be inherited by Student and Representative.
  */
 public class PersonEntity {
 
-    @OneToOne
-    private UserEntity user;
+    @Column(name="USERID")
+    private UUID userId;
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

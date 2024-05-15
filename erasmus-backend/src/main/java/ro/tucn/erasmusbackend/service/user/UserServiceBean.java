@@ -3,6 +3,8 @@ package ro.tucn.erasmusbackend.service.user;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
 import ro.tucn.erasmusbackend.dto.user.UserRequestDTO;
 import ro.tucn.erasmusbackend.dto.user.UserResponseDTO;
@@ -11,6 +13,7 @@ import ro.tucn.erasmusbackend.exception.NotFoundException;
 import ro.tucn.erasmusbackend.mapper.UserMapper;
 import ro.tucn.erasmusbackend.model.UserEntity;
 import ro.tucn.erasmusbackend.repository.UserRepository;
+import ro.tucn.erasmusbackend.security.util.SecurityConstants;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -33,6 +36,10 @@ public class UserServiceBean implements UserService {
     @Transactional
     public UserResponseDTO save(UserRequestDTO userRequestDTO) {
         UserEntity userToBeAdded = userMapper.userRequestDTOToUserEntity(userRequestDTO);
+
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(SecurityConstants.PASSWORD_STRENGTH);
+        userToBeAdded.setPassword(passwordEncoder.encode(userToBeAdded.getPassword()));//TODO
+
         UserEntity userAdded = userRepository.save(userToBeAdded);
 
         return userMapper.userEntityToUserResponseDTO(userAdded);
