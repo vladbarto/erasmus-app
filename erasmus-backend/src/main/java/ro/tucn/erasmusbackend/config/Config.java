@@ -1,6 +1,7 @@
 package ro.tucn.erasmusbackend.config;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ro.tucn.erasmusbackend.mapper.*;
@@ -11,6 +12,8 @@ import ro.tucn.erasmusbackend.service.bareSubject.BareSubjectService;
 import ro.tucn.erasmusbackend.service.bareSubject.BareSubjectServiceBean;
 import ro.tucn.erasmusbackend.service.faculty.FacultyService;
 import ro.tucn.erasmusbackend.service.faculty.FacultyServiceBean;
+import ro.tucn.erasmusbackend.service.mail.MailService;
+import ro.tucn.erasmusbackend.service.mail.SyncMailServiceBean;
 import ro.tucn.erasmusbackend.service.person.PersonService;
 import ro.tucn.erasmusbackend.service.person.PersonServiceBean;
 import ro.tucn.erasmusbackend.service.representative.RepresentativeService;
@@ -105,5 +108,13 @@ public class Config {
             @Value("${spring.application.name:BACKEND}") String applicationName
     ) {
         return new RepresentativeServiceBean(representativeRepository, representativeMapper, applicationName);
+    }
+
+    @Bean
+    public MailService syncMailServiceBean(
+            @Value("${mail-sender-app.url}") String url,
+            RestTemplateBuilder restTemplateBuilder
+    ) {
+        return new SyncMailServiceBean(url, restTemplateBuilder.build());
     }
 }

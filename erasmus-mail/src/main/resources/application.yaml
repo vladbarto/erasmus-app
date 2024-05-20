@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: erasmus-mail
+  mail:
+    host: smtp.mailtrap.io
+    port: 465
+    username: a7e56d1ce2c7d6
+    password: 6d01db17124b5d
+server:
+  port: 8888
+  servlet:
+    context-path: '/api'
+  error:
+    whitelabel:
+      enabled: false
