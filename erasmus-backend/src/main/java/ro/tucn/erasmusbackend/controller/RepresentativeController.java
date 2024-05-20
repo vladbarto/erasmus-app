@@ -59,7 +59,6 @@ public class RepresentativeController {
     @Operation(summary = "Save one representative")
     @ApiResponse(responseCode = "201", description = "Representative successfully created",
             content = {@Content(mediaType = "application/json", schema = @Schema(implementation = RepresentativeResponseDTO.class))})
-    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<RepresentativeResponseDTO> saveRepresentative(
             @RequestBody RepresentativeRequestDTO representativeRequestDTO
     ) {

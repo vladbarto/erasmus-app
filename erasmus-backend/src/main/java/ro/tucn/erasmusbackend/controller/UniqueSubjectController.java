@@ -12,8 +12,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import ro.tucn.erasmusbackend.dto.uniqueSubject.UniqueSubjectRequestDTO;
 import ro.tucn.erasmusbackend.dto.uniqueSubject.UniqueSubjectResponseDTO;
-import ro.tucn.erasmusbackend.dto.uniqueSubject.UniqueSubjectRequestDTO;
-import ro.tucn.erasmusbackend.dto.uniqueSubject.UniqueSubjectResponseDTO;
 import ro.tucn.erasmusbackend.exception.ExceptionBody;
 import ro.tucn.erasmusbackend.service.uniqueSubject.UniqueSubjectService;
 

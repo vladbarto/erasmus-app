@@ -42,6 +42,8 @@ public class SecurityConfig {
                         .requestMatchers(SecurityConstants.AUTH_PATHS_TO_SKIP).permitAll()
                         .requestMatchers(SecurityConstants.SWAGGER_PATHS_TO_SKIP).permitAll()
                         .requestMatchers(SecurityConstants.REGISTER_URL).permitAll()
+                        .requestMatchers(SecurityConstants.REGISTER_STUDENT_URL).permitAll()
+                        .requestMatchers(SecurityConstants.REGISTER_REPRESENTATIVE_URL).permitAll()
                         .anyRequest().authenticated())
                 .addFilter(loginFilter)
                 .addFilterAfter(authorizationFilter, LoginFilter.class)

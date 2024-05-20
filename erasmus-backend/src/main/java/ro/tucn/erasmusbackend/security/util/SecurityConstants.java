@@ -7,6 +7,8 @@ public final class SecurityConstants {
     public static final String LOGIN_URL = "/auth/v1/login";
     public static final String JWT_TOKEN = "jwt-token";
     public static final String REGISTER_URL = "/user/v1/one";
+    public static final String REGISTER_STUDENT_URL = "/student/v1/one";
+    public static final String REGISTER_REPRESENTATIVE_URL = "/representative/v1/one";
     public static final String[] SWAGGER_PATHS_TO_SKIP = {
             "/v2/api-docs",
             "/swagger-resources",

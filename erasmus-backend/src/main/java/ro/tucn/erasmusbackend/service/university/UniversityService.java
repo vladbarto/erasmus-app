@@ -3,7 +3,6 @@ package ro.tucn.erasmusbackend.service.university;
 import ro.tucn.erasmusbackend.dto.university.UniversityRequestDTO;
 import ro.tucn.erasmusbackend.dto.university.UniversityResponseDTO;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Service class that defines University CRUD operations

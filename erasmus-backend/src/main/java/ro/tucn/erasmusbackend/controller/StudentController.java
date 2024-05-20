@@ -57,7 +57,6 @@ public class StudentController {
     @Operation(summary = "Save one student")
     @ApiResponse(responseCode = "201", description = "Student successfully created",
             content = {@Content(mediaType = "application/json", schema = @Schema(implementation = StudentResponseDTO.class))})
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<StudentResponseDTO> saveStudent(
             @RequestBody StudentRequestDTO studentRequestDTO
     ) {
