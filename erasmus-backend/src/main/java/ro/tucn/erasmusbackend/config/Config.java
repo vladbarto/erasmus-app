@@ -1,5 +1,6 @@
 package ro.tucn.erasmusbackend.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
@@ -26,6 +27,8 @@ import ro.tucn.erasmusbackend.service.university.UniversityService;
 import ro.tucn.erasmusbackend.service.university.UniversityServiceBean;
 import ro.tucn.erasmusbackend.service.user.UserService;
 import ro.tucn.erasmusbackend.service.user.UserServiceBean;
+import org.springframework.jms.core.JmsTemplate;
+import ro.tucn.erasmusbackend.service.mail.AsyncMailServiceBean;
 
 @Configuration
 public class Config {
@@ -116,5 +119,14 @@ public class Config {
             RestTemplateBuilder restTemplateBuilder
     ) {
         return new SyncMailServiceBean(url, restTemplateBuilder.build());
+    }
+
+    @Bean
+    public MailService asyncMailServiceBean(
+            @Value("${queues.async-mail-sender-request}") String destination,
+            JmsTemplate jmsTemplate,
+            ObjectMapper objectMapper
+    ) {
+        return new AsyncMailServiceBean(destination, jmsTemplate, objectMapper);
     }
 }

@@ -12,6 +12,10 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
+  activemq:
+    broken-url: tcp://localhost:61616
+    user: admin
+    password: admin
 server:
   port: 6583
   servlet:
@@ -24,3 +28,5 @@ security:
   token-expiration-days: 15
 mail-sender-app:
   url: http://localhost:8888/api/mail/v1/sync
+queues:
+  async-mail-sender-request: async-mail-sender-request
