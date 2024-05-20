@@ -45,8 +45,8 @@ export class RegisterComponent implements OnInit {
       role: this.registerForm?.get('role')?.value
     };
 
-// localStorage.setItem(JSON.stringify(credentials));
-    this.detailsService.sendUserForm(credentials); // todo: to be commented out
+    localStorage.setItem('credentials', JSON.stringify(credentials));
+//     this.detailsService.sendUserForm(credentials); // todo: to be commented out
 
     this.router.navigateByUrl('auth/register/details');
   }

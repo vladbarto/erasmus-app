@@ -11,7 +11,7 @@
       <p class="text-white">sunt student, scoate-ma de aici!!!</p>
       <div class="container d-flex justify-content-center">
         <div class="card shadow-lg w-50 p-2">
-          <form (ngSubmit)="onUserSubmit()" [formGroup]="addUserForm">
+          <form (ngSubmit)="onStudentSubmit()" [formGroup]="addStudentForm">
             <div class="form-control">
               <label class="form-label" for="cnp">CNP</label>
               <input class="form-control"
@@ -134,7 +134,7 @@
       <p class="text-white">sunt reprezentant al universitatii, scoate-ma de aici!!!</p>
       <div class="container d-flex justify-content-center">
         <div class="card shadow-lg w-50 p-2">
-          <form (ngSubmit)="onUserSubmit()" [formGroup]="addUserForm">
+          <form (ngSubmit)="onRepresentativeSubmit()" [formGroup]="addRepresentativeForm">
             <div class="form-control">
               <label class="form-label" for="cnp">CNP</label>
               <input class="form-control"
@@ -208,7 +208,7 @@
               >
             </div>
             <div class="form-control">
-              <label class="form-label" for="city">City</label>
+              <label class="form-label" for="city">Titles</label>
               <input class="form-control"
                      type="text"
                      name="titles"

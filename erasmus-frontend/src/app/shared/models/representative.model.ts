@@ -1,6 +1,6 @@
 export interface RepresentativeModel {
   personId?: string;
-  user: UserModel;
+  userId: string;
   cnp: string;
   name: string;
   phoneNumber: string;
