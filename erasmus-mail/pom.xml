@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>ro.ps</groupId>
-    <artifactId>chef-mgmt-mail</artifactId>
+    <artifactId>erasmus-mail</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>erasmus-mail</name>
     <description>erasmus-mail</description>
