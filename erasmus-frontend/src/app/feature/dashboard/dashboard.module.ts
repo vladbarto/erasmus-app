@@ -23,6 +23,7 @@ import { UniqueSubjectCardComponent } from './unique-subjects/unique-subject-car
 import { AddUniqueSubjectComponent } from './unique-subjects/add-unique-subject/add-unique-subject.component';
 import { UniqueSubjectComponent } from './unique-subject/unique-subject.component';
 import { UpdateUniqueSubjectComponent } from './unique-subject/update-unique-subject/update-unique-subject.component';
+import { CurrentUserComponent } from './current-user/current-user.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { UpdateUniqueSubjectComponent } from './unique-subject/update-unique-sub
     AddUniqueSubjectComponent,
     UniqueSubjectComponent,
     UpdateUniqueSubjectComponent,
+    CurrentUserComponent,
   ],
   imports: [
     CommonModule,

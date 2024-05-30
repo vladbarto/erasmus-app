@@ -40,20 +40,59 @@
           Unique Subjects
         </a>
       </li>
+
+      <li #drop class="dropdown singleDro" (mouseover)="hoverOn()" (mouseleave)="hoverOff()">
+        <button (click)="currentUser()" class="p-3 rounded-5 fundal">
+          <i class="fa-solid fa-baby fa-2xl" style="color: white"></i>
+        </button>
+      </li>
     </ul>
   </div>
+
+
 </nav>
 <div class="fundal p-5 text-white">
-  <h3>content</h3>
+  <div class="container d-flex flex-row">
+    <div class="m-2">
+      <h3>content</h3>
+    </div>
+    <div class="bg-light-subtle m-2">
+      <a href="assets/Bartolomei%20Vlad-Learning-agreement-signed_LemnaruHorsch.pdf" download="newfilename">Download the pdf</a>
+    </div>
+    <div class="m-2 border rounded-2 p-5">
+      <h3>Do you have questions?</h3>
+      <button class="bg-primary rounded-5 text-white p-2" (click)="showMailMethod()">Write someone here</button>
+      <div *ngIf="showMail">
+        <div class="container">
+          <form (ngSubmit)="onSendMail()" [formGroup]="mailRequestForm">
+            <div class="form-outline mb-1">
+              <label class="form-label"></label>
+              <input class="form-control" formControlName="to" placeholder="To">
+            </div>
+            <div class="form-outline mb-1">
+              <label class="form-label"></label>
+              <input class="form-control" formControlName="subject" placeholder="Subject">
+            </div>
+            <div class="form-outline mb-1">
+              <label class="form-label"></label>
+              <textarea class="form-control" formControlName="body" rows="5" placeholder="Your Email goes here!"></textarea>
+            </div>
+            <button class="mt-3 btn btn-success">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 <!--  Todo: bring announcements to main page-->
-<!--  <div class="container-sm ml-0 bg-info text-dark">-->
-<!--    <div class="p-2 d-flex flex-row">-->
-<!--      @for (announcement of announcements; track announcement.announcementId) {-->
-<!--      <app-announcement-card [announcement]="announcement" (deleteAnnouncement)="deleteAnnouncementCalled($event)"></app-announcement-card>-->
-<!--      } @empty {-->
-<!--      <p>No announcement</p>-->
-<!--      }-->
-<!--    </div>-->
-<!--  </div>-->
+  <div class="container-sm ml-0 text-dark border rounded-2">
+    <h3 class="text-white"> Recent announcements </h3>
+    <div class="p-2 d-flex flex-row">
+      @for (announcement of announcements; track announcement.announcementId) {
+      <app-announcement-card [announcement]="announcement"></app-announcement-card>
+      } @empty {
+      <p>No announcement</p>
+      }
+    </div>
+  </div>
 </div>
 
