@@ -14,4 +14,4 @@ server:
     whitelabel:
       enabled: false
 queues:
-  async-mail-sender-request: async-main-sender-request
+  async-mail-sender-request: async-mail-sender-request
