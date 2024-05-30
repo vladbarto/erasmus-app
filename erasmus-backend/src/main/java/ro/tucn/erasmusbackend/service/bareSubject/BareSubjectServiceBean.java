@@ -30,23 +30,23 @@ public class BareSubjectServiceBean implements BareSubjectService {
 
         List<BareSubjectEntity> bareSubjectEntityList = bareSubjectRepository.findAll();
 
-        return bareSubjectMapper.bareSubjectEntityListToBareSubjectResponseDTOList(bareSubjectEntityList);
+        return bareSubjectMapper.entityListToResponseDTOList(bareSubjectEntityList);
     }
 
     @Override
     @Transactional
     public BareSubjectResponseDTO save(BareSubjectRequestDTO bareSubjectRequestDTO) {
         log.info("Posting a bare subject for application {}", applicationName);
-        BareSubjectEntity bareSubjectToBeAdded = bareSubjectMapper.bareSubjectRequestDTOToBareSubjectEntity (bareSubjectRequestDTO);
+        BareSubjectEntity bareSubjectToBeAdded = bareSubjectMapper.requestDTOToEntity (bareSubjectRequestDTO);
         BareSubjectEntity bareSubjectAdded = bareSubjectRepository.save(bareSubjectToBeAdded);
 
-        return bareSubjectMapper.bareSubjectEntityToBareSubjectResponseDTO(bareSubjectAdded);
+        return bareSubjectMapper.entityToResponseDTO(bareSubjectAdded);
     }
 
     @Override
     public BareSubjectResponseDTO findById(UUID bareSubjectId) {
         return bareSubjectRepository.findById(bareSubjectId)
-                .map(bareSubjectMapper::bareSubjectEntityToBareSubjectResponseDTO)
+                .map(bareSubjectMapper::entityToResponseDTO)
                 .orElseThrow(() -> new NotFoundException(String.format(
                         ExceptionCode.ERR001_BARESUBJECT_NOT_FOUND.getMessage(),
                         bareSubjectId
@@ -65,7 +65,7 @@ public class BareSubjectServiceBean implements BareSubjectService {
 
                     return bareSubjectEntity;
                 })
-                .map(bareSubjectMapper::bareSubjectEntityToBareSubjectResponseDTO)
+                .map(bareSubjectMapper::entityToResponseDTO)
                 .orElseThrow(() -> new NotFoundException(String.format(
                         ExceptionCode.ERR001_BARESUBJECT_NOT_FOUND.getMessage(),
                         bareSubjectId

@@ -15,6 +15,7 @@ import ro.tucn.erasmusbackend.service.faculty.FacultyService;
 import ro.tucn.erasmusbackend.service.faculty.FacultyServiceBean;
 import ro.tucn.erasmusbackend.service.mail.MailService;
 import ro.tucn.erasmusbackend.service.mail.SyncMailServiceBean;
+import ro.tucn.erasmusbackend.service.pdf.SyncPdfServiceBean;
 import ro.tucn.erasmusbackend.service.person.PersonService;
 import ro.tucn.erasmusbackend.service.person.PersonServiceBean;
 import ro.tucn.erasmusbackend.service.representative.RepresentativeService;
@@ -29,6 +30,7 @@ import ro.tucn.erasmusbackend.service.user.UserService;
 import ro.tucn.erasmusbackend.service.user.UserServiceBean;
 import org.springframework.jms.core.JmsTemplate;
 import ro.tucn.erasmusbackend.service.mail.AsyncMailServiceBean;
+import ro.tucn.erasmusbackend.service.pdf.PdfService;
 
 @Configuration
 public class Config {
@@ -42,7 +44,7 @@ public class Config {
     }
 
     @Bean
-    public BareSubjectService bareSubjectService(
+    public BareSubjectService bareSubjectServiceBean(
             BareSubjectRepository bareSubjectRepository,
             BareSubjectMapper bareSubjectMapper,
             @Value("${spring.application.name:BACKEND}") String applicationName
@@ -78,7 +80,7 @@ public class Config {
     }
 
     @Bean
-    public UniqueSubjectService uniqueSubjectService(
+    public UniqueSubjectService uniqueSubjectServiceBean(
             UniqueSubjectRepository uniqueSubjectRepository,
             UniqueSubjectMapper uniqueSubjectMapper,
             @Value("${spring.application.name:BACKEND}") String applicationName
@@ -87,7 +89,7 @@ public class Config {
     }
 
     @Bean
-    public PersonService personService(
+    public PersonService personServiceBean(
             PersonRepository personRepository,
             PersonMapper personMapper,
             @Value("${spring.application.name:BACKEND}") String applicationName
@@ -96,7 +98,7 @@ public class Config {
     }
 
     @Bean
-    public StudentService studentService(
+    public StudentService studentServiceBean(
             StudentRepository studentRepository,
             StudentMapper studentMapper,
             @Value("${spring.application.name:BACKEND}") String applicationName
@@ -105,7 +107,7 @@ public class Config {
     }
 
     @Bean
-    public RepresentativeService representativeService(
+    public RepresentativeService representativeServiceBean(
             RepresentativeRepository representativeRepository,
             RepresentativeMapper representativeMapper,
             @Value("${spring.application.name:BACKEND}") String applicationName
@@ -128,5 +130,13 @@ public class Config {
             ObjectMapper objectMapper
     ) {
         return new AsyncMailServiceBean(destination, jmsTemplate, objectMapper);
+    }
+
+    @Bean
+    public PdfService pdfServiceBean (
+            @Value("http://localhost:2001/api/pdf/v1/sync") String url,
+            RestTemplateBuilder restTemplateBuilder
+    ) {
+        return new SyncPdfServiceBean(url, restTemplateBuilder.build());
     }
 }

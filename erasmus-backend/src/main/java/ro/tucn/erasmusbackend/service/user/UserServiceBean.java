@@ -25,7 +25,7 @@ public class UserServiceBean implements UserService {
     @Override
     public UserResponseDTO findByUsername(String username) {
         return userRepository.findByUsername(username)
-                .map(userMapper::userEntityToUserResponseDTO)
+                .map(userMapper::entityToResponseDTO)
                 .orElseThrow(() -> new NotFoundException(String.format(
                         ExceptionCode.ERR002_USERNAME_NOT_FOUND.getMessage(),
                         username
@@ -35,13 +35,13 @@ public class UserServiceBean implements UserService {
     @Override
     @Transactional
     public UserResponseDTO save(UserRequestDTO userRequestDTO) {
-        UserEntity userToBeAdded = userMapper.userRequestDTOToUserEntity(userRequestDTO);
+        UserEntity userToBeAdded = userMapper.requestDTOToEntity(userRequestDTO);
 
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(SecurityConstants.PASSWORD_STRENGTH);
         userToBeAdded.setPassword(passwordEncoder.encode(userToBeAdded.getPassword()));//TODO
 
         UserEntity userAdded = userRepository.save(userToBeAdded);
 
-        return userMapper.userEntityToUserResponseDTO(userAdded);
+        return userMapper.entityToResponseDTO(userAdded);
     }
 }

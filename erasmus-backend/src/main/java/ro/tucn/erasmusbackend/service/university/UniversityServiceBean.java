@@ -28,16 +28,16 @@ public class UniversityServiceBean implements UniversityService{
 
         List<UniversityEntity> universityEntityList = universityRepository.findAll();
 
-        return universityMapper.universityEntityListToUniversityResponseDTOList(universityEntityList);
+        return universityMapper.entityListToResponseDTOList(universityEntityList);
     }
 
     @Override
     @Transactional
     public UniversityResponseDTO save(UniversityRequestDTO universityRequestDTO) {
-        UniversityEntity universityToBeAdded = universityMapper.universityRequestDTOToUniversityEntity(universityRequestDTO);
+        UniversityEntity universityToBeAdded = universityMapper.requestDTOToEntity(universityRequestDTO);
         UniversityEntity universityAdded = universityRepository.save(universityToBeAdded);
 
-        return universityMapper.universityEntityToUniversityResponseDTO(universityAdded);
+        return universityMapper.entityToResponseDTO(universityAdded);
     }
 
 //    @Override

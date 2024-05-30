@@ -7,9 +7,9 @@ import ro.tucn.erasmusbackend.dto.user.UserResponseDTO;
 import ro.tucn.erasmusbackend.model.UserEntity;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE)
-public interface UserMapper {
+public interface UserMapper extends GenericMapper<UserEntity, UserRequestDTO, UserResponseDTO> {
 
-    UserResponseDTO userEntityToUserResponseDTO(UserEntity userEntity);
-
-    UserEntity userRequestDTOToUserEntity(UserRequestDTO userRequestDTO);
+//    UserResponseDTO userEntityToUserResponseDTO(UserEntity userEntity);
+//
+//    UserEntity userRequestDTOToUserEntity(UserRequestDTO userRequestDTO);
 }

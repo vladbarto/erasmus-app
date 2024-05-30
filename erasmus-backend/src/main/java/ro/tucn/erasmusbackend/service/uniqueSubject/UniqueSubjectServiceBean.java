@@ -30,22 +30,22 @@ public class UniqueSubjectServiceBean implements UniqueSubjectService {
 
         List<UniqueSubjectEntity> uniqueSubjectEntityList = uniqueSubjectRepository.findAll();
 
-        return uniqueSubjectMapper.uniqueSubjectEntityListToUniqueSubjectResponseDTOList(uniqueSubjectEntityList);
+        return uniqueSubjectMapper.entityListToResponseDTOList(uniqueSubjectEntityList);
     }
 
     @Override
     @Transactional
     public UniqueSubjectResponseDTO save(UniqueSubjectRequestDTO uniqueSubjectRequestDTO) {
-        UniqueSubjectEntity uniqueSubjectToBeAdded = uniqueSubjectMapper.uniqueSubjectRequestDTOToUniqueSubjectEntity (uniqueSubjectRequestDTO);
+        UniqueSubjectEntity uniqueSubjectToBeAdded = uniqueSubjectMapper.requestDTOToEntity (uniqueSubjectRequestDTO);
         UniqueSubjectEntity uniqueSubjectAdded = uniqueSubjectRepository.save(uniqueSubjectToBeAdded);
 
-        return uniqueSubjectMapper.uniqueSubjectEntityToUniqueSubjectResponseDTO(uniqueSubjectAdded);
+        return uniqueSubjectMapper.entityToResponseDTO(uniqueSubjectAdded);
     }
 
     @Override
     public UniqueSubjectResponseDTO findById(UUID uniqueSubjectId) {
         return uniqueSubjectRepository.findById(uniqueSubjectId)
-                .map(uniqueSubjectMapper::uniqueSubjectEntityToUniqueSubjectResponseDTO)
+                .map(uniqueSubjectMapper::entityToResponseDTO)
                 .orElseThrow(() -> new NotFoundException(String.format(
                         ExceptionCode.ERR001_UNIQUESUBJECT_NOT_FOUND.getMessage(),
                         uniqueSubjectId
@@ -67,7 +67,7 @@ public class UniqueSubjectServiceBean implements UniqueSubjectService {
 
                     return uniqueSubjectEntity;
                 })
-                .map(uniqueSubjectMapper::uniqueSubjectEntityToUniqueSubjectResponseDTO)
+                .map(uniqueSubjectMapper::entityToResponseDTO)
                 .orElseThrow(() -> new NotFoundException(String.format(
                         ExceptionCode.ERR001_UNIQUESUBJECT_NOT_FOUND.getMessage(),
                         uniqueSubjectId

@@ -29,13 +29,13 @@ public class FacultyServiceBean implements FacultyService {
 
         List<FacultyEntity> facultyEntityList = facultyRepository.findAll();
 
-        return facultyMapper.facultyEntityListToFacultyResponseDTOList(facultyEntityList);
+        return facultyMapper.entityListToResponseDTOList(facultyEntityList);
     }
 
     @Override
     public FacultyResponseDTO findById(UUID facultyId) {
         return facultyRepository.findById(facultyId)
-                .map(facultyMapper::facultyEntityToFacultyResponseDTO)
+                .map(facultyMapper::entityToResponseDTO)
                 .orElseThrow(() -> new NotFoundException(String.format(
                         ExceptionCode.ERR001_FACULTY_NOT_FOUND.getMessage(),
                         facultyId
@@ -46,10 +46,10 @@ public class FacultyServiceBean implements FacultyService {
     @Transactional
     public FacultyResponseDTO save(FacultyRequestDTO facultyRequestDTO) {
         log.info("Saving (Posting) a faculty for application {}", applicationName);
-        FacultyEntity facultyToBeAdded = facultyMapper.facultyRequestDTOToFacultyEntity(facultyRequestDTO);
+        FacultyEntity facultyToBeAdded = facultyMapper.requestDTOToEntity(facultyRequestDTO);
         FacultyEntity facultyAdded = facultyRepository.save(facultyToBeAdded);
 
-        return facultyMapper.facultyEntityToFacultyResponseDTO(facultyAdded);
+        return facultyMapper.entityToResponseDTO(facultyAdded);
     }
 
     @Override
@@ -65,7 +65,7 @@ public class FacultyServiceBean implements FacultyService {
 
                     return facultyEntity;
                 })
-                .map(facultyMapper::facultyEntityToFacultyResponseDTO)
+                .map(facultyMapper::entityToResponseDTO)
                 .orElseThrow(() -> new NotFoundException(String.format(
                         ExceptionCode.ERR001_FACULTY_NOT_FOUND.getMessage(),
                         facultyId
@@ -80,7 +80,7 @@ public class FacultyServiceBean implements FacultyService {
 
         facultyRepository.deleteAllByIdInBatch(ids);
         return facultyRepository.findById(facultyId)
-                .map(facultyMapper::facultyEntityToFacultyResponseDTO)
+                .map(facultyMapper::entityToResponseDTO)
                 .orElseThrow(() -> new NotFoundException(String.format(
                         ExceptionCode.ERR001_FACULTY_NOT_FOUND.getMessage(),
                         facultyId

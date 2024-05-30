@@ -1,7 +1,6 @@
 package ro.tucn.erasmusbackend.mapper;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import ro.tucn.erasmusbackend.dto.announcement.AnnouncementRequestDTO;
 import ro.tucn.erasmusbackend.dto.announcement.AnnouncementResponseDTO;
 import ro.tucn.erasmusbackend.model.AnnouncementEntity;

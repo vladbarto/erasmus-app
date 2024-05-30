@@ -28,23 +28,23 @@ public class RepresentativeServiceBean implements RepresentativeService{
 
         List<RepresentativeEntity> representativeEntityList = representativeRepository.findAll();
 
-        return representativeMapper.representativeEntityListToRepresentativeResponseDTOList(representativeEntityList);
+        return representativeMapper.entityListToResponseDTOList(representativeEntityList);
     }
 
     @Override
     @Transactional
     public RepresentativeResponseDTO save(RepresentativeRequestDTO representativeRequestDTO) {
         log.info("Posting an announcement for application {}", applicationName);
-        RepresentativeEntity representativeToBeAdded = representativeMapper.representativeRequestDTOToRepresentativeEntity(representativeRequestDTO);
+        RepresentativeEntity representativeToBeAdded = representativeMapper.requestDTOToEntity(representativeRequestDTO);
         RepresentativeEntity representativeAdded = representativeRepository.save(representativeToBeAdded);
 
-        return representativeMapper.representativeEntityToRepresentativeResponseDTO(representativeAdded);
+        return representativeMapper.entityToResponseDTO(representativeAdded);
     }
 
     @Override
     public RepresentativeResponseDTO findById(UUID personId) {
         return representativeRepository.findById(personId)
-                .map(representativeMapper::representativeEntityToRepresentativeResponseDTO)
+                .map(representativeMapper::entityToResponseDTO)
                 .orElseThrow(() -> new NotFoundException(String.format(
                         ExceptionCode.ERR001_REPRESENTATIVE_NOT_FOUND.getMessage(),
                         personId

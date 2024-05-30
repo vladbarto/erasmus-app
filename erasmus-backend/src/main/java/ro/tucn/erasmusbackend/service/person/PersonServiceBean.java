@@ -30,23 +30,23 @@ public class PersonServiceBean implements PersonService{
 
         List<PersonEntity> personEntityList = personRepository.findAll();
 
-        return personMapper.personEntityListToPersonResponseDTOList(personEntityList);
+        return personMapper.entityListToResponseDTOList(personEntityList);
     }
 
     @Override
     @Transactional
     public PersonResponseDTO save(PersonRequestDTO personRequestDTO) {
         log.info("Posting a new person for application {}", applicationName);
-        PersonEntity personToBeAdded = personMapper.personRequestDTOToPersonEntity(personRequestDTO);
+        PersonEntity personToBeAdded = personMapper.requestDTOToEntity(personRequestDTO);
         PersonEntity personAdded = personRepository.save(personToBeAdded);
 
-        return personMapper.personEntityToPersonResponseDTO(personAdded);
+        return personMapper.entityToResponseDTO(personAdded);
     }
 
     @Override
     public PersonResponseDTO findById(UUID personId) {
         return personRepository.findById(personId)
-                .map(personMapper::personEntityToPersonResponseDTO)
+                .map(personMapper::entityToResponseDTO)
                 .orElseThrow(() -> new NotFoundException(String.format(
                         ExceptionCode.ERR001_PERSON_NOT_FOUND.getMessage(),
                         personId
@@ -70,7 +70,7 @@ public class PersonServiceBean implements PersonService{
 
                     return personEntity;
                 })
-                .map(personMapper::personEntityToPersonResponseDTO)
+                .map(personMapper::entityToResponseDTO)
                 .orElseThrow(() -> new NotFoundException(String.format(
                         ExceptionCode.ERR001_PERSON_NOT_FOUND.getMessage(),
                         personId

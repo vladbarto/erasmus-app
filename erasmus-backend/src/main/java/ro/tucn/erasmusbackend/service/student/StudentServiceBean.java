@@ -25,16 +25,16 @@ public class StudentServiceBean implements StudentService {
 
         List<StudentEntity> studentEntityList = studentRepository.findAll();
 
-        return studentMapper.studentEntityListToStudentResponseDTOList(studentEntityList);
+        return studentMapper.entityListToResponseDTOList(studentEntityList);
     }
 
     @Override
     @Transactional
     public StudentResponseDTO save(StudentRequestDTO studentRequestDTO) {
-        StudentEntity studentToBeAdded = studentMapper.studentRequestDTOToStudentEntity(studentRequestDTO);
+        StudentEntity studentToBeAdded = studentMapper.requestDTOToEntity(studentRequestDTO);
         StudentEntity studentAdded = studentRepository.save(studentToBeAdded);
 
-        return studentMapper.studentEntityToStudentResponseDTO(studentAdded);
+        return studentMapper.entityToResponseDTO(studentAdded);
     }
     
 }
