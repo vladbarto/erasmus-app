@@ -1,5 +1,9 @@
 # ErasmusFrontend
 
+## Teste frontend
+- am incercat sa fac una bucata test in `home.component.spec.ts`
+- nu am reusit sa rulez teste in frontend, prin urmare nu le-am mai implementat
+  
 ## Authentication
 During an authentication process one can:
 - login
