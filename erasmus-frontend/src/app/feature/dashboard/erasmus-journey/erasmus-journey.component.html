@@ -1,0 +1,20 @@
+<div class="fundal">
+  <div class="container p-3">
+    <p class="text-white">erasmus-journey works!</p>
+    <div class="border-white rounded-2 p-3">
+      @for (uniqueSubject of uniqueSubjects; track uniqueSubject.id) {
+      <app-unique-subject-card [uniqueSubject]="uniqueSubject"></app-unique-subject-card>
+      } @empty {
+      <p>No unique subject</p>
+      }
+    </div>
+    <div class="bg-transparent m-2">
+      <h2>Download your Learning Agreement here</h2>
+      <button class="btn btn-light" (click)="generatePdf()">
+        <a href="../../generated.pdf" download="LearningAgreement">Download the pdf</a>
+      </button>
+
+    </div>
+  </div>
+</div>
+
