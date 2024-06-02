@@ -24,6 +24,7 @@ import { AddUniqueSubjectComponent } from './unique-subjects/add-unique-subject/
 import { UniqueSubjectComponent } from './unique-subject/unique-subject.component';
 import { UpdateUniqueSubjectComponent } from './unique-subject/update-unique-subject/update-unique-subject.component';
 import { CurrentUserComponent } from './current-user/current-user.component';
+import { ErasmusJourneyComponent } from './erasmus-journey/erasmus-journey.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { CurrentUserComponent } from './current-user/current-user.component';
     UniqueSubjectComponent,
     UpdateUniqueSubjectComponent,
     CurrentUserComponent,
+    ErasmusJourneyComponent,
   ],
   imports: [
     CommonModule,

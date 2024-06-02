@@ -22,4 +22,14 @@ export class UniqueSubjectCardComponent {
   deleteUniqueSubjectPressed(uniqueSubjectId: string): void {
     this.deleteUniqueSubject.emit(uniqueSubjectId);
   }
+
+  saveToLocalStorage(event: any): void {
+    const checkbox: HTMLInputElement = document.querySelector('#checkbox-select')!;
+    if(checkbox.checked) {
+      localStorage.setItem("desiredSubject", JSON.stringify(this.uniqueSubject));
+    }
+    else {
+      localStorage.removeItem("desiredSubject");
+    }
+  }
 }

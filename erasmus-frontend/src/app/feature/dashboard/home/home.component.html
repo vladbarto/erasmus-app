@@ -56,12 +56,9 @@
     <div class="m-2">
       <h3>content</h3>
     </div>
-    <div class="bg-light-subtle m-2">
-      <a href="assets/Bartolomei%20Vlad-Learning-agreement-signed_LemnaruHorsch.pdf" download="newfilename">Download the pdf</a>
-    </div>
     <div class="m-2 border rounded-2 p-5">
       <h3>Do you have questions?</h3>
-      <button class="bg-primary rounded-5 text-white p-2" (click)="showMailMethod()">Write someone here</button>
+      <button id="mail-button" class="bg-primary rounded-5 text-white p-2" (click)="showMailMethod()">Write someone here</button>
       <div *ngIf="showMail">
         <div class="container">
           <form (ngSubmit)="onSendMail()" [formGroup]="mailRequestForm">
@@ -82,8 +79,12 @@
         </div>
       </div>
     </div>
+    <div class="m-2 border rounded-2 p-5">
+      <h3>Start your Erasmus journey here</h3>
+      <button id="erasmus-button" class="bg-primary rounded-5 text-white p-2" (click)="goToJourneyPage()">Start</button>
+    </div>
   </div>
-<!--  Todo: bring announcements to main page-->
+
   <div class="container-sm ml-0 text-dark border rounded-2">
     <h3 class="text-white"> Recent announcements </h3>
     <div class="p-2 d-flex flex-row">

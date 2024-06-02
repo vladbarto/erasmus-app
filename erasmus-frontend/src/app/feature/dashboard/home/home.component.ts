@@ -79,6 +79,10 @@ export class HomeComponent implements OnInit{
     this.status = 'off';
   }
 
+  goToJourneyPage(): void {
+    this.router.navigateByUrl('dashboard/erasmus-journey');
+  }
+
   currentUser(): void {
     this.router.navigateByUrl('dashboard/current-user');
   }

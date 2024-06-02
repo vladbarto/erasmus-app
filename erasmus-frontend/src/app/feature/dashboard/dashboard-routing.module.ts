@@ -11,6 +11,7 @@ import {BareSubjectComponent} from "./bare-subject/bare-subject.component";
 import {UniqueSubjectsComponent} from "./unique-subjects/unique-subjects.component";
 import {UniqueSubjectComponent} from "./unique-subject/unique-subject.component";
 import {CurrentUserComponent} from "./current-user/current-user.component";
+import {ErasmusJourneyComponent} from "./erasmus-journey/erasmus-journey.component";
 
 export const routes: Routes = [
   {
@@ -52,6 +53,10 @@ export const routes: Routes = [
   {
     path: 'current-user',
     component: CurrentUserComponent
+  },
+  {
+    path: 'erasmus-journey',
+    component: ErasmusJourneyComponent
   },
   {
     path: '**',
