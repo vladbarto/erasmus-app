@@ -1,9 +1,6 @@
 package ro.tucn.erasmusbackend.dto.announcement;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.UUID;
 
@@ -12,6 +9,8 @@ import java.util.UUID;
  */
 @Getter
 @Setter
+@Builder
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 public class AnnouncementRequestDTO {

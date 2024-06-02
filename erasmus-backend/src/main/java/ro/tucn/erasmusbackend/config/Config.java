@@ -134,7 +134,7 @@ public class Config {
 
     @Bean
     public PdfService pdfServiceBean (
-            @Value("http://localhost:2001/api/pdf/v1/sync") String url,
+            @Value("http://localhost:2001/api/pdf/v1/generator") String url,
             RestTemplateBuilder restTemplateBuilder
     ) {
         return new SyncPdfServiceBean(url, restTemplateBuilder.build());
