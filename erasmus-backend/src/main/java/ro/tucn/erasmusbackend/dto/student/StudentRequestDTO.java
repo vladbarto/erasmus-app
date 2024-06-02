@@ -1,9 +1,6 @@
 package ro.tucn.erasmusbackend.dto.student;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import ro.tucn.erasmusbackend.dto.person.PersonRequestDTO;
 
 /**
@@ -11,6 +8,7 @@ import ro.tucn.erasmusbackend.dto.person.PersonRequestDTO;
  */
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class StudentRequestDTO extends PersonRequestDTO {

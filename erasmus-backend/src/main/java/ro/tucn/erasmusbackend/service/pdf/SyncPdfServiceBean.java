@@ -18,6 +18,7 @@ public class SyncPdfServiceBean extends RestTemplateBase<PdfRequestDTO, PdfRespo
 
     @Override
     public PdfResponseDTO generatePdf(PdfRequestDTO pdfRequestDTO) {
+        log.info("Sent pdf request {}", pdfRequestDTO.getStudent().getName());
         return postForEntity(url, pdfRequestDTO);
     }
 

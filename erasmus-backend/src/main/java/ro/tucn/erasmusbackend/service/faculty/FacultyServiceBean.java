@@ -79,12 +79,13 @@ public class FacultyServiceBean implements FacultyService {
         ids.add(facultyId);
 
         facultyRepository.deleteAllByIdInBatch(ids);
-        return facultyRepository.findById(facultyId)
-                .map(facultyMapper::entityToResponseDTO)
-                .orElseThrow(() -> new NotFoundException(String.format(
-                        ExceptionCode.ERR001_FACULTY_NOT_FOUND.getMessage(),
-                        facultyId
-                )));
+//        return facultyRepository.findById(facultyId)
+//                .map(facultyMapper::entityToResponseDTO)
+//                .orElseThrow(() -> new NotFoundException(String.format(
+//                        ExceptionCode.ERR001_FACULTY_NOT_FOUND.getMessage(),
+//                        facultyId
+//                )));
+        return null;
     }
 
 }
