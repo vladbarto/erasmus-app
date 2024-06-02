@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: erasmus-pdf
+server:
+  port: 2001
+  servlet:
+    context-path: '/api'
+  error:
+    whitelabel:
+      enabled: false

@@ -19,8 +19,8 @@ public class PdfController {
 
     private final PdfService pdfService;
 
-    @PostMapping("/sync")
-    public ResponseEntity<byte[]> generateSyncPdf(@RequestBody PdfRequestDTO pdfRequestDTO) {
+    @PostMapping("/generator")
+    public ResponseEntity<PdfResponseDTO> generatePdf(@RequestBody PdfRequestDTO pdfRequestDTO) {
         PdfResponseDTO responseDTO = pdfService.generatePdf(pdfRequestDTO);
 
         if ("SUCCESS".equals(responseDTO.getStatus())) {
@@ -29,7 +29,7 @@ public class PdfController {
             headers.setContentDispositionFormData("attachment", "generated.pdf");
 
             return new ResponseEntity<>(
-                    responseDTO.getPdfContent(),
+                    responseDTO,//.getPdfContent(),
                     headers,
                     HttpStatus.OK
             );

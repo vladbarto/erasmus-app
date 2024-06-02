@@ -21,12 +21,12 @@ public class PdfController {
 
     private final PdfService syncPdfServiceBean;
 
-    @PostMapping("sync")
+    @PostMapping("generator")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<PdfResponseDTO> generateSyncPdf(@RequestBody PdfRequestDTO pdfRequestDTO) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String email = (String) authentication.getPrincipal();
-//      pdfRequestDTO.setFrom(email);
+        //String email = (String) authentication.getPrincipal();
+
         return new ResponseEntity<>(
                 syncPdfServiceBean.generatePdf(pdfRequestDTO),
                 HttpStatus.OK

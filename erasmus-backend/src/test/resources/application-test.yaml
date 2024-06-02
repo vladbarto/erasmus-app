@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:erasmus_test_db
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+security:
+  admin-jwt-token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpZ2lvc2FuIiwicm9sZSI6WyJST0xFX0FETUlOIl0sImV4cCI6MTcxODMxMjQwMH0.v7DT8EyjYqnc4a8FT2Ybh9-7Dth9at_giQbyR1mVQHs
+  invalid-jwt-token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLmNvbSIsInJvbGUiOlsiUk9MRV9BRE1JTiJdLCJleHAiOi01MzM2NTk4MzE0NzMxOTAzfQ.C6yF6gr1labvp1QT
